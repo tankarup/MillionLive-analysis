@@ -1,0 +1,199 @@
+<html>
+  <head>
+    <title>ミリシタ、シャニマス　カラー表</title>    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+
+    <style type="text/css">
+
+      #colors_area, #labels_area, #button_area, #canvas-holder{
+        float: left;
+        margin: 10px;
+      }
+      #informations {
+          clear:both;
+          font-size: small;
+      }
+
+    </style>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+
+  </head>
+  <body>
+      <h1 class="bg-primary text-light">ミリシタ、シャニマス　カラー表</h1>
+      <div id="content"  class="container-fluid d-flex justify-content-center align-items-center">
+      <div id="colors_area">
+      <h2 class="alert-primary">色一覧</h2>
+  <textarea id="colors" cols="15" rows="30" style="vertical-align: top;">
+#fbfafa
+#f30100
+#f19591
+#d1342c
+#eb613f
+#e5461c
+#ee762e
+#f19557
+#454341
+#f39939
+#d7a96b
+#efb864
+#f5ad3b
+#afa690
+#ffc639
+#fed552
+#ffc602
+#f7e78e
+#ffe43f
+#ffe43f
+#ffe012
+#c7b83c
+#fff03c
+#eceb70
+#aeb49c
+#b4e04b
+#90e667
+#5ce626
+#9bce92
+#01a860
+#92cfbb
+#006047
+#6bb6b0
+#5abfb7
+#bee3e3
+#50d0d0
+#01adb9
+#d9f2ff
+#3b91c4
+#89c3eb
+#58a6dc
+#515558
+#6495cf
+#d3dde9
+#99b7dc
+#144384
+#274079
+#788bc5
+#2743d2
+#7278a8
+#7967c3
+#7e6ca8
+#ebe1ff
+#554171
+#a846fb
+#9238be
+#e75bec
+#ff00ff
+#fd99e1
+#7f6575
+#a6126a
+#f84cad
+#e25a9b
+#ed90ba
+#f93b90
+#ffbad6
+#e9739b
+#f54275
+#b54461
+#f1becb
+#d7385f
+#be1e3e
+#ea5b76
+#b63b40
+#e22b30</textarea>
+  </div>
+<div id="labels_area">
+<h2 class="alert-primary">名前一覧</h2>
+<textarea id="labels" cols="15" rows="30" style="vertical-align: top;">
+桑山千雪
+芹沢あさひ
+百瀬莉緒
+木下ひなた
+野々原茜
+小宮果穂
+大神環
+二階堂千鶴
+所恵美
+高槻やよい
+宮尾美也
+周防桃子
+矢吹可奈
+北沢志保
+市川雛菜
+伊吹翼
+西城樹里
+中谷育
+双海亜美
+双海真美
+八宮めぐる
+七尾百合子
+ロコ
+福田のり子
+永吉昴
+星井美希
+有栖川夏葉
+黛冬優子
+島原エレナ
+秋月律子
+田中琴葉
+白瀬咲耶
+北上麗花
+徳川まつり
+天空橋朋花
+浅倉透
+我那覇響
+幽谷霧子
+三峰結華
+杜野凛世
+佐竹美奈子
+菊地真
+最上静香
+萩原雪歩
+真壁瑞希
+風野灯織
+桜守歌織
+横山奈緒
+如月千早
+豊川風花
+福丸小糸
+望月杏奈
+白石紬
+エミリー
+田中摩美々
+三浦あずさ
+大崎甜花
+和泉愛依
+水瀬伊織
+高山紗代子
+四条貴音
+月岡恋鐘
+舞浜歩
+箱崎星梨花
+園田智代子
+櫻木真乃
+高坂海美
+大崎甘奈
+松田亜利沙
+馬場このみ
+ジュリア
+樋口円香
+春日未来
+篠宮可憐
+天海春香</textarea>
+
+</div>
+
+        <div id="button_area">
+            <button type="button" class="btn btn-primary" onclick="generateCircle();">生成</button>
+        </div>
+        <div id="canvas-holder" style="width:70%;">
+            <canvas id="myChart"></canvas>
+        </div>
+    </div>
+        <div id="informations">
+            <p>アイドルカラーは<a href="https://imas-db.jp/misc/color.html">アイマスDB</a>を使用させていただいています。ありがとうございます。</p>
+        </div>
+    <script src="color_circle.js"></script>
+  </body>
+</html>
