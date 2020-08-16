@@ -1,0 +1,80 @@
+<html>
+<head>
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <style>
+        html, body {
+
+        }
+        html, body, #content {
+            height:100%;
+            width: 100%;
+        }
+
+        #container {
+            height: 80%;
+            width: 100%;
+        }
+    </style>
+
+</head>
+<body>
+    <div id="content">
+        <div id="header">
+            <h1 class="bg-primary text-light">ミリシタ:グラフ</h1>
+        </div>
+        <div id="control">
+            <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                <label class="btn btn-secondary active">
+                    <input type="radio" name="options" id="data_height" autocomplete="off" checked> 身長
+                </label>
+                <label class="btn btn-secondary">
+                    <input type="radio" name="options" id="data_weight" autocomplete="off"> 体重
+                </label>
+                <label class="btn btn-secondary">
+                    <input type="radio" name="options" id="data_age" autocomplete="off"> 年齢
+                </label>
+                <label class="btn btn-secondary">
+                    <input type="radio" name="options" id="data_B" autocomplete="off"> B
+                </label>
+                <label class="btn btn-secondary">
+                    <input type="radio" name="options" id="data_W" autocomplete="off"> W
+                </label>
+                <label class="btn btn-secondary">
+                    <input type="radio" name="options" id="data_H" autocomplete="off"> H
+                </label>
+                <label class="btn btn-secondary">
+                    <input type="radio" name="options" id="data_color" autocomplete="off"> イメージカラー
+                </label>
+            </div>
+            <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                <label class="btn btn-secondary active">
+                    <input type="radio" name="sorts" id="sort_1"" autocomplete="off" checked> 昇順
+                </label>
+                <label class="btn btn-secondary">
+                    <input type="radio" name="sorts" id="sort_0" autocomplete="off"> デフォルト
+                </label>
+                <label class="btn btn-secondary">
+                    <input type="radio" name="sorts" id="sort_-1" autocomplete="off"> 降順
+                </label>
+            </div>
+        </div>
+        <div id="container"></div>
+    </div>
+
+
+
+
+
+
+
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+
+    <script src="image_graph.js"></script>
+</body>
+
+</html>
