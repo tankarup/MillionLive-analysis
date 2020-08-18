@@ -23,16 +23,20 @@ function image_overlay(){
     }
 }
 
-function make_data(key, sort){
+function make_data(key, sort, filters){
     let series = [];
     for (idol of idols){
-        series.push({
-            name: idol['名前'],
-            data: [parseFloat(idol[key])],
-            color: 'rgba(0,0,0,0)',
-            borderColor: idol['カラーコード'],
-            borderWidth: 2,
-        })
+        if (filters.indexOf(idol['タイプ'])>-1 && filters.indexOf(idol['シリーズ'])>-1){
+
+            series.push({
+                name: idol['名前'],
+                data: [parseFloat(idol[key])],
+                color: 'rgba(0,0,0,0)',
+                borderColor: idol['カラーコード'],
+                borderWidth: 2,
+            });
+        }
+
     }
 
     series.sort((a, b) => {
@@ -43,10 +47,7 @@ function make_data(key, sort){
     return series;
 }
 
-function init_data(){
-    return make_data('身長', 1);
 
-}
 
 function drawChart(){
     myChart = Highcharts.chart('container', {
@@ -101,14 +102,15 @@ function drawChart(){
 }
 
 document.addEventListener('DOMContentLoaded', function () {
-    series = init_data();
-    drawChart();
+    refresh_chart();
 });
 window.addEventListener('resize', function () {
     drawChart();
 }, false);
-$('input[type=radio]').on('change',function(){
-    const radios = $('input[type=radio]');
+
+function refresh_chart(){
+    
+    const radios = $('input[type=radio], input[type=checkbox]');
     
     let selections = [];
     for (radio of radios){
@@ -119,45 +121,65 @@ $('input[type=radio]').on('change',function(){
 
     let key = '身長';
     let sort = 1;
-    for (selection of selections){
+    let filters = [];
+    for (selection of selections) {
 
         option = $(selection).attr('id');
         switch (option) {
             case 'data_height':
-            key = '身長';
-            break;
+                key = '身長';
+                break;
             case 'data_weight':
-            key = '体重';
-            break;
+                key = '体重';
+                break;
             case 'data_age':
-            key = '年齢';
-            break;
+                key = '年齢';
+                break;
             case 'data_B':
-            key = 'B';
-            break;
+                key = 'B';
+                break;
             case 'data_W':
-            key = 'W';
-            break;
+                key = 'W';
+                break;
             case 'data_H':
-            key = 'H';
-            break;
+                key = 'H';
+                break;
             case 'data_color':
-            key = '色相';
-            break;
+                key = '色相';
+                break;
             case 'sort_1':
-            sort = 1;
-            break;
+                sort = 1;
+                break;
             case 'sort_0':
-            sort = 0;
-            break;
+                sort = 0;
+                break;
             case 'sort_-1':
-            sort = -1;
-            break;
+                sort = -1;
+                break;
+            case 'filter_as':
+                filters.push('765AS');
+                break;
+            case 'filter_ml':
+                filters.push('ミリオン');
+                break;
+            case 'filter_p':
+                filters.push('P');
+                break;
+            case 'filter_f':
+                filters.push('F');
+                break;
+            case 'filter_a':
+                filters.push('A');
+                break;
+
         }
     }
-    console.log('options', key, sort);
-    series = make_data(key, sort);
+    series = make_data(key, sort, filters);
     drawChart();
+}
+
+$('input[type=radio], input[type=checkbox]').on('change',function(){
+    refresh_chart();
 });
 
 
