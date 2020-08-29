@@ -7,3 +7,4 @@
 
 ## 考察
 * [オファーテキスト分析によるアイドルのグループ化の試み](texts/offer_text_analysis/offer_text_analysis.md)
+* [ミリシタアイドルの体型を主成分分析](texts/idol_pca/idol_pca.md)
