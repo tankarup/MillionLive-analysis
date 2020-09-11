@@ -18,13 +18,17 @@
           font-size: small;
       }
     </style>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
 
   </head>
   <body onload="draw()">
-      <h1>ミリシタ　オファーテキスト分析</h1>
+      <h1 class="bg-primary text-light">ニテル？ミリシタ：話し方</h1>
 
       <ul>
-          <li>ミリシタのオファーテキストを分析し、アイドル達がどのような言葉を使う傾向があるのかを可視化しました。</li>
+          <li>ミリシタのオファーテキストを分析し、アイドル達がどのような言葉を使う傾向があるのかを可視化しました。アイコンの位置が近いほど似た話し方をしているはずです</li>
+          <li>詳細な解説は<a href="texts/offer_text_analysis/offer_text_analysis.html">こちら</a>。</li>
       </ul>
 
       <div id="network"></div>
@@ -54,6 +58,10 @@
               <li>オファーテキストはサブメガネP様が作成されたデータを使用させていただきました。ありがとうございます。</li>
           </ul>
       </div>
+      <script
+      src="https://code.jquery.com/jquery-3.3.1.min.js"
+      integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+      crossorigin="anonymous"></script>
       <script type="text/javascript" src="https://unpkg.com/vis-network/standalone/umd/vis-network.min.js"></script>
     <script type="text/javascript" src="offer_text_analysis.js"></script>
   </body>
