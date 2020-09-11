@@ -4,6 +4,7 @@
 * [カラーサークル Chart.js版](color_circle.html)
 * [アイドル画像を使ったインタラクティブ棒グラフ](image_graph.html)
 * [ミリシタユニットをインタラクティブにネットワーク図で表示](unit_network.html)
+* [趣味・特技・好きなもの](hobby_similarity.html)が似たアイドルを探す
 
 ## 考察
 * [オファーテキスト分析によるアイドルのグループ化の試み](texts/offer_text_analysis/offer_text_analysis.md)
