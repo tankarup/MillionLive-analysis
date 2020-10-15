@@ -1,0 +1,143 @@
+
+<!doctype html>
+<html>
+
+<head>
+	<title>Scatter Chart</title>
+	<meta charset="UTF-8">
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>
+
+	<style>
+	canvas {
+		-moz-user-select: none;
+		-webkit-user-select: none;
+		-ms-user-select: none;
+	}
+	</style>
+</head>
+
+<body>
+	<h1>画像マーカー散布図</h1>
+	<p>下のような形式のCSVファイル(1列目：x, 2列目:y, 3列目:画像ファイル)を読み込むと、指定した画像をマーカーに使った散布図を生成します。このhtmlファイルをローカルに保存し、画像ファイルはご自身で用意してお使い下さい。</p>
+	<pre>
+身長[cm],  体重[kg],  image
+155,       48,        icons/mano.jpg
+154,       43,        icons/hiori.jpg
+157,       46,        icons/meguru.jpg
+	</pre>
+	<div>
+		<input type="file" id="inputfile" accept=".csv"/>
+	</div>
+	<div class="chart-container" style="position: relative; margin: 30px; height:80vh; width:80vw">
+		<canvas id="canvas"></canvas>
+	</div>
+
+
+	<script>
+
+let chart = null;
+
+function img(src){
+    let img = new Image();
+    img.src =src;
+    img.width = 64;
+    img.height = 64;
+    return img;
+}
+
+function max(arr){
+    let m = arr.reduce(function(a, b) {
+        return Math.max(a, b);
+    });
+    return m;
+}
+
+function min(arr){
+    let m = arr.reduce(function(a, b) {
+        return Math.min(a, b);
+    });
+    return m;
+}
+
+const inputfile = document.getElementById('inputfile');
+inputfile.addEventListener("change", function(e) {
+    const fileList = e.target.files;
+    const reader = new FileReader();
+    reader.readAsText(fileList[0]);
+    reader.onload = function() {
+        const lines = reader.result.split("\n");
+        let datasets = [];
+        let x_label = '';
+        let y_label = '';
+        let xs = [];
+        let ys = [];
+        for (let i = 0; i < lines.length; i++) {
+            const items = lines[i].split(",");
+            if (i == 0){
+                x_label = items[0];
+                y_label = items[1];
+            } else if (items.length < 3){
+                continue;
+            } else {
+                //console.log(items[0], items[1], items[2]);
+                const x = parseFloat(items[0]);
+                const y = parseFloat(items[1]);
+
+                const data = {'data': [{'x': x, 'y': y}], 'pointStyle': img(items[2])};
+                datasets.push(data);
+                xs.push(x);
+                ys.push(y);
+                /*
+                chart.data.datasets.forEach((dataset) => {
+                    dataset.data.push(data);
+                });
+                */
+                
+            }
+
+        };
+        chart.data.datasets = datasets;
+        chart.options.scales.yAxes[0].scaleLabel = {labelString: y_label, display: true,};
+        chart.options.scales.xAxes[0].scaleLabel = {labelString: x_label, display: true,};
+        chart.options.scales.xAxes[0].ticks.suggestedMin = min(xs) - (max(xs) - min(xs))*0.1;
+        chart.options.scales.xAxes[0].ticks.suggestedMax = max(xs) + (max(xs) - min(xs))*0.1;
+        chart.options.scales.yAxes[0].ticks.suggestedMin = min(ys) - (max(ys) - min(ys))*0.1;
+        chart.options.scales.yAxes[0].ticks.suggestedMax = max(ys) + (max(ys) - min(ys))*0.1;
+        
+        chart.update();
+        //console.log(chart.data.datasets);
+
+    };
+
+},false);
+
+
+
+window.onload = function () {
+    var ctx = document.getElementById('canvas').getContext('2d');
+
+    const properties = {
+        type: 'scatter',
+        data: {
+            datasets: [],
+        },
+        options: {
+            legend: {
+                display: false
+            },
+            responsive: true,
+            maintainAspectRatio: false,
+        }
+
+    };
+    chart = new Chart(ctx, properties);
+};
+
+	</script>
+
+
+
+</body>
+
+</html>
