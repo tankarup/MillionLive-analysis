@@ -14,6 +14,10 @@
 		-webkit-user-select: none;
 		-ms-user-select: none;
 	}
+    input[type=number]{
+        width: 50px;
+
+    }
 	</style>
 </head>
 
@@ -29,20 +33,57 @@
 	<div>
 		<input type="file" id="inputfile" accept=".csv"/>
 	</div>
-	<div class="chart-container" style="position: relative; margin: 30px; height:80vh; width:80vw">
+	<div class="chart-container" style="position: relative; margin: 30px; height:80vh; width:80vw; float: left;">
 		<canvas id="canvas"></canvas>
-	</div>
+    </div>
+    <div id="settings" style="float:left;">
+        <table>
+            <tr><td>X min: </td><td><input type="number" id="xmin"></td></tr>
+            <tr><td>X max: </td><td><input type="number" id="xmax"></td></tr>
+            <tr><td>Y min: </td><td><input type="number" id="ymin"></td></tr>
+            <tr><td>Y max: </td><td><input type="number" id="ymax"></td></tr>
+            <tr><td>Icon size: </td><td><input type="number" id="icon_size"></td></tr>
+        </table>
+        <input type="button" onclick="btn_settings();" value="設定を更新">
+    </div>
 
 
 	<script>
 
 let chart = null;
+let xmin, xmax, ymin, ymax;
+let icon_size = 64;
+
+function btn_settings(){
+    const size = document.getElementById('icon_size').value;
+    if (size){
+        icon_size = size;
+        open_file();
+    }
+
+    let value = null;
+    xmin = parseFloat(document.getElementById('xmin').value);
+    //chart.options.scales.xAxes[0].ticks.min = value ? value : null;
+    if (!isNaN(xmin)) chart.options.scales.xAxes[0].ticks.min = xmin;
+
+    xmax = parseFloat(document.getElementById('xmax').value);
+    //if (value) chart.options.scales.xAxes[0].ticks.max = value;
+    if (!isNaN(xmax)) chart.options.scales.xAxes[0].ticks.max = xmax;
+
+    ymin = parseFloat(document.getElementById('ymin').value);
+    if (!isNaN(ymin)) chart.options.scales.yAxes[0].ticks.min = ymin;
+
+    ymax = parseFloat(document.getElementById('ymax').value);
+    if (!isNaN(ymax)) chart.options.scales.yAxes[0].ticks.max = ymax;
+
+    chart.update();
+}
 
 function img(src){
     let img = new Image();
     img.src =src;
-    img.width = 64;
-    img.height = 64;
+    img.width = icon_size;
+    img.height = icon_size;
     return img;
 }
 
@@ -60,11 +101,10 @@ function min(arr){
     return m;
 }
 
-const inputfile = document.getElementById('inputfile');
-inputfile.addEventListener("change", function(e) {
-    const fileList = e.target.files;
+function open_file(){
+    const inputfile = document.getElementById('inputfile').files[0];
     const reader = new FileReader();
-    reader.readAsText(fileList[0]);
+    reader.readAsText(inputfile);
     reader.onload = function() {
         const lines = reader.result.split("\n");
         let datasets = [];
@@ -100,15 +140,22 @@ inputfile.addEventListener("change", function(e) {
         chart.data.datasets = datasets;
         chart.options.scales.yAxes[0].scaleLabel = {labelString: y_label, display: true,};
         chart.options.scales.xAxes[0].scaleLabel = {labelString: x_label, display: true,};
-        chart.options.scales.xAxes[0].ticks.suggestedMin = min(xs) - (max(xs) - min(xs))*0.1;
-        chart.options.scales.xAxes[0].ticks.suggestedMax = max(xs) + (max(xs) - min(xs))*0.1;
-        chart.options.scales.yAxes[0].ticks.suggestedMin = min(ys) - (max(ys) - min(ys))*0.1;
-        chart.options.scales.yAxes[0].ticks.suggestedMax = max(ys) + (max(ys) - min(ys))*0.1;
+        
+        chart.options.scales.xAxes[0].ticks.suggestedMin = xmin ? xmin : min(xs) - (max(xs) - min(xs))*0.1;
+        chart.options.scales.xAxes[0].ticks.suggestedMax = xmax ? xmax : max(xs) + (max(xs) - min(xs))*0.1;
+        chart.options.scales.yAxes[0].ticks.suggestedMin = ymin ? ymin : min(ys) - (max(ys) - min(ys))*0.1;
+        chart.options.scales.yAxes[0].ticks.suggestedMax = ymax ? ymax : max(ys) + (max(ys) - min(ys))*0.1;
         
         chart.update();
         //console.log(chart.data.datasets);
 
     };
+}
+
+const inputfile = document.getElementById('inputfile');
+inputfile.addEventListener("change", function(e) {
+    open_file();
+
 
 },false);
 
