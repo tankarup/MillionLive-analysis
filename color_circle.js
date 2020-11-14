@@ -1,6 +1,9 @@
 function generateCircle() {
-    chart.data.datasets[0].backgroundColor = document.getElementById("colors").value.split(/\r\n|\n/);
+    colors = document.getElementById("colors").value.split(/\r\n|\n/);
+    chart.data.datasets[0].data = Array(colors.length).fill(1);
+    chart.data.datasets[0].backgroundColor = colors;
     chart.data.labels = document.getElementById("labels").value.split(/\r\n|\n/);
+    console.log(chart.data);
     chart.update();
 }
 
