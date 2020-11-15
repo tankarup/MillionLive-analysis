@@ -1,0 +1,737 @@
+<html>
+  <head>
+	<title>ミリシタ　ユニットネットワーク</title>
+
+  <script type="text/javascript" src="https://unpkg.com/vis-network/standalone/umd/vis-network.min.js"></script>
+  <style type="text/css">
+    #mynetwork {
+      width: 100%;
+      height: 90%;
+      border: 1px solid lightgray;
+    }
+  </style>
+</head>
+<body>
+
+<p>
+  Create a simple network with some nodes and edges.
+</p>
+
+<div id="mynetwork"></div>
+
+<script type="text/javascript">
+  // create an array with nodes
+  var nodes = new vis.DataSet([{'color': '#01a860',
+  'id': '秋月律子',
+  'image': 'icons/ritsuko.png',
+  'value': 0.0745608889587937},
+ {'color': '#e22b30',
+  'id': '天海春香',
+  'image': 'icons/haruka.png',
+  'value': 0.0109752932890012},
+ {'color': '#fed552',
+  'id': '伊吹翼',
+  'image': 'icons/tsubasa.png',
+  'value': 0.0143544452838457},
+ {'color': '#554171',
+  'id': 'エミリー',
+  'image': 'icons/emily.png',
+  'value': 0.00880913243329802},
+ {'color': '#ea5b76',
+  'id': '春日未来',
+  'image': 'icons/mirai.png',
+  'value': 0.0176700060591048},
+ {'color': '#01adb9',
+  'id': '我那覇響',
+  'image': 'icons/hibiki.png',
+  'value': 0.0133369532706797},
+ {'color': '#515558',
+  'id': '菊地真',
+  'image': 'icons/makoto.png',
+  'value': 0.0137767219476353},
+ {'color': '#2743d2',
+  'id': '如月千早',
+  'image': 'icons/chihaya.png',
+  'value': 0.0246762385876466},
+ {'color': '#6bb6b0',
+  'id': '北上麗花',
+  'image': 'icons/reika.png',
+  'value': 0.0150038903231921},
+ {'color': '#afa690',
+  'id': '北沢志保',
+  'image': 'icons/shiho.png',
+  'value': 0.010107919191585},
+ {'color': '#d1342c',
+  'id': '木下ひなた',
+  'image': 'icons/hinata.png',
+  'value': 0.0125491356694044},
+ {'color': '#e9739b',
+  'id': '高坂海美',
+  'image': 'icons/umi.png',
+  'value': 0.0161423268915024},
+ {'color': '#274079',
+  'id': '桜守歌織',
+  'image': 'icons/kaori.png',
+  'value': 0.00797224670047422},
+ {'color': '#58a6dc',
+  'id': '佐竹美奈子',
+  'image': 'icons/minako.png',
+  'value': 0.00765919197198349},
+ {'color': '#a6126a',
+  'id': '四条貴音',
+  'image': 'icons/takane.png',
+  'value': 0.0313514921670776},
+ {'color': '#b63b40',
+  'id': '篠宮可憐',
+  'image': 'icons/karen.png',
+  'value': 0.0160965754995379},
+ {'color': '#9bce92',
+  'id': '島原エレナ',
+  'image': 'icons/elena.png',
+  'value': 0.00816598227717562},
+ {'color': '#d7385f',
+  'id': 'ジュリア',
+  'image': 'icons/julia.png',
+  'value': 0.0158890028734524},
+ {'color': '#ebe1ff',
+  'id': '白石紬',
+  'image': 'icons/tsumugi.png',
+  'value': 0.0105088467688034},
+ {'color': '#efb864',
+  'id': '周防桃子',
+  'image': 'icons/momoko.png',
+  'value': 0.0187316010251426},
+ {'color': '#ee762e',
+  'id': '大神環',
+  'image': 'icons/tamaki.png',
+  'value': 0.0123030328722657},
+ {'color': '#f39939',
+  'id': '高槻やよい',
+  'image': 'icons/yayoi.png',
+  'value': 0.0192536632965642},
+ {'color': '#7f6575',
+  'id': '高山紗代子',
+  'image': 'icons/sayoko.png',
+  'value': 0.0105029759984214},
+ {'color': '#92cfbb',
+  'id': '田中琴葉',
+  'image': 'icons/kotoha.png',
+  'value': 0.0183961691601763},
+ {'color': '#bee3e3',
+  'id': '天空橋朋花',
+  'image': 'icons/tomoka.png',
+  'value': 0.0314597317866057},
+ {'color': '#5abfb7',
+  'id': '徳川まつり',
+  'image': 'icons/matsuri.png',
+  'value': 0.00935521318248577},
+ {'color': '#454341',
+  'id': '所恵美',
+  'image': 'icons/megumi.png',
+  'value': 0.00816598227717562},
+ {'color': '#7278a8',
+  'id': '豊川風花',
+  'image': 'icons/fuka.png',
+  'value': 0.01706817675907},
+ {'color': '#f7e78e',
+  'id': '中谷育',
+  'image': 'icons/iku.png',
+  'value': 0.00674446011479836},
+ {'color': '#aeb49c',
+  'id': '永吉昴',
+  'image': 'icons/subaru.png',
+  'value': 0.0141418309316379},
+ {'color': '#c7b83c',
+  'id': '七尾百合子',
+  'image': 'icons/yuriko.png',
+  'value': 0.0419375383303429},
+ {'color': '#f19557',
+  'id': '二階堂千鶴',
+  'image': 'icons/chizuru.png',
+  'value': 0.0149681411754934},
+ {'color': '#eb613f',
+  'id': '野々原茜',
+  'image': 'icons/akane.png',
+  'value': 0.0147502836967633},
+ {'color': '#d3dde9',
+  'id': '萩原雪歩',
+  'image': 'icons/yukiho.png',
+  'value': 0.018160524324747},
+ {'color': '#ed90ba',
+  'id': '箱崎星梨花',
+  'image': 'icons/serika.png',
+  'value': 0.00824266031476262},
+ {'color': '#f1becb',
+  'id': '馬場このみ',
+  'image': 'icons/konomi.png',
+  'value': 0.0407353346364078},
+ {'color': '#eceb70',
+  'id': '福田のり子',
+  'image': 'icons/noriko.png',
+  'value': 0.0163013349373006},
+ {'color': '#ffe43f',
+  'id': '双海亜美',
+  'image': 'icons/ami.png',
+  'value': 0.0268155171481112},
+ {'color': '#ffe43f',
+  'id': '双海真美',
+  'image': 'icons/mami.png',
+  'value': 0.0268155171481112},
+ {'color': '#b4e04b',
+  'id': '星井美希',
+  'image': 'icons/miki.png',
+  'value': 0.0133323837291399},
+ {'color': '#e25a9b',
+  'id': '舞浜歩',
+  'image': 'icons/ayumu.png',
+  'value': 0.0414941964602348},
+ {'color': '#99b7dc',
+  'id': '真壁瑞希',
+  'image': 'icons/mizuki.png',
+  'value': 0.00785366725036825},
+ {'color': '#b54461',
+  'id': '松田亜利沙',
+  'image': 'icons/arisa.png',
+  'value': 0.0120010602600138},
+ {'color': '#9238be',
+  'id': '三浦あずさ',
+  'image': 'icons/azusa.png',
+  'value': 0.0235235211726695},
+ {'color': '#fd99e1',
+  'id': '水瀬伊織',
+  'image': 'icons/iori.png',
+  'value': 0.0249104395101932},
+ {'color': '#d7a96b',
+  'id': '宮尾美也',
+  'image': 'icons/miya.png',
+  'value': 0.0115838620912735},
+ {'color': '#6495cf',
+  'id': '最上静香',
+  'image': 'icons/shizuka.png',
+  'value': 0.017963729697802},
+ {'color': '#7e6ca8',
+  'id': '望月杏奈',
+  'image': 'icons/anna.png',
+  'value': 0.0128276275165568},
+ {'color': '#f19591',
+  'id': '百瀬莉緒',
+  'image': 'icons/rio.png',
+  'value': 0.0514924211065808},
+ {'color': '#f5ad3b',
+  'id': '矢吹可奈',
+  'image': 'icons/kana.png',
+  'value': 0.0162796164048658},
+ {'color': '#788bc5',
+  'id': '横山奈緒',
+  'image': 'icons/nao.png',
+  'value': 0.00928106018312749},
+ {'color': '#fff03c',
+  'id': 'ロコ',
+  'image': 'icons/roco.png',
+  'value': 0.0530004353365969}]);
+
+  // create an array with edges
+  var edges = new vis.DataSet([{'font': {'color': '#e22b30'}, 'from': '天海春香', 'label': '千早ちゃん', 'to': '如月千早'},
+ {'font': {'color': '#e22b30'}, 'from': '天海春香', 'label': '貴音さん', 'to': '四条貴音'},
+ {'font': {'color': '#e22b30'}, 'from': '天海春香', 'label': '律子さん', 'to': '秋月律子'},
+ {'font': {'color': '#e22b30'}, 'from': '天海春香', 'label': '響ちゃん', 'to': '我那覇響'},
+ {'font': {'color': '#e22b30'}, 'from': '天海春香', 'label': '環', 'to': '大神環'},
+ {'font': {'color': '#2743d2'}, 'from': '如月千早', 'label': '春香', 'to': '天海春香'},
+ {'font': {'color': '#2743d2'}, 'from': '如月千早', 'label': '美希', 'to': '星井美希'},
+ {'font': {'color': '#2743d2'}, 'from': '如月千早', 'label': '真', 'to': '菊地真'},
+ {'font': {'color': '#2743d2'}, 'from': '如月千早', 'label': '律子', 'to': '秋月律子'},
+ {'font': {'color': '#2743d2'},
+  'from': '如月千早',
+  'label': 'あずささん',
+  'to': '三浦あずさ'},
+ {'font': {'color': '#2743d2'}, 'from': '如月千早', 'label': '未来', 'to': '春日未来'},
+ {'font': {'color': '#2743d2'}, 'from': '如月千早', 'label': '静香', 'to': '最上静香'},
+ {'font': {'color': '#2743d2'}, 'from': '如月千早', 'label': '琴葉さん', 'to': '田中琴葉'},
+ {'font': {'color': '#2743d2'}, 'from': '如月千早', 'label': '箱崎さん', 'to': '箱崎星梨花'},
+ {'font': {'color': '#2743d2'}, 'from': '如月千早', 'label': '志保', 'to': '北沢志保'},
+ {'font': {'color': '#2743d2'}, 'from': '如月千早', 'label': '風花さん', 'to': '豊川風花'},
+ {'font': {'color': '#2743d2'},
+  'from': '如月千早',
+  'label': 'のり子さん',
+  'to': '福田のり子'},
+ {'font': {'color': '#2743d2'}, 'from': '如月千早', 'label': '麗花さん', 'to': '北上麗花'},
+ {'font': {'color': '#2743d2'}, 'from': '如月千早', 'label': 'ジュリア', 'to': 'ジュリア'},
+ {'font': {'color': '#b4e04b'}, 'from': '星井美希', 'label': '千早さん', 'to': '如月千早'},
+ {'font': {'color': '#b4e04b'}, 'from': '星井美希', 'label': '真君', 'to': '菊地真'},
+ {'font': {'color': '#b4e04b'}, 'from': '星井美希', 'label': 'でこちゃん', 'to': '水瀬伊織'},
+ {'font': {'color': '#b4e04b'}, 'from': '星井美希', 'label': '律子、さん', 'to': '秋月律子'},
+ {'font': {'color': '#b4e04b'}, 'from': '星井美希', 'label': '昴くん', 'to': '永吉昴'},
+ {'font': {'color': '#d3dde9'}, 'from': '萩原雪歩', 'label': '四条さん', 'to': '四条貴音'},
+ {'font': {'color': '#d3dde9'}, 'from': '萩原雪歩', 'label': '律子さん', 'to': '秋月律子'},
+ {'font': {'color': '#d3dde9'},
+  'from': '萩原雪歩',
+  'label': '天空橋さん',
+  'to': '天空橋朋花'},
+ {'font': {'color': '#d3dde9'},
+  'from': '萩原雪歩',
+  'label': 'のり子さん',
+  'to': '福田のり子'},
+ {'font': {'color': '#f39939'},
+  'from': '高槻やよい',
+  'label': '伊織ちゃん',
+  'to': '水瀬伊織'},
+ {'font': {'color': '#f39939'}, 'from': '高槻やよい', 'label': '亜美', 'to': '双海亜美'},
+ {'font': {'color': '#f39939'}, 'from': '高槻やよい', 'label': '真美', 'to': '双海真美'},
+ {'font': {'color': '#f39939'}, 'from': '高槻やよい', 'label': '桃子', 'to': '周防桃子'},
+ {'font': {'color': '#515558'}, 'from': '菊地真', 'label': 'このみ師匠', 'to': '馬場このみ'},
+ {'font': {'color': '#a6126a'}, 'from': '四条貴音', 'label': '律子', 'to': '秋月律子'},
+ {'font': {'color': '#a6126a'}, 'from': '四条貴音', 'label': '真美', 'to': '双海真美'},
+ {'font': {'color': '#a6126a'}, 'from': '四条貴音', 'label': '路子（みちこ）', 'to': 'ロコ'},
+ {'font': {'color': '#a6126a'}, 'from': '四条貴音', 'label': '歩', 'to': '舞浜歩'},
+ {'font': {'color': '#9238be'}, 'from': '三浦あずさ', 'label': '律子さん', 'to': '秋月律子'},
+ {'font': {'color': '#ffe43f'},
+  'from': '双海亜美',
+  'label': '千早お姉ちゃん',
+  'to': '如月千早'},
+ {'font': {'color': '#ffe43f'}, 'from': '双海亜美', 'label': '真美', 'to': '双海真美'},
+ {'font': {'color': '#ffe43f'},
+  'from': '双海亜美',
+  'label': '静香お姉ちゃん',
+  'to': '最上静香'},
+ {'font': {'color': '#ffe43f'},
+  'from': '双海亜美',
+  'label': '琴葉お姉ちゃん',
+  'to': '田中琴葉'},
+ {'font': {'color': '#ffe43f'}, 'from': '双海亜美', 'label': '朋花様', 'to': '天空橋朋花'},
+ {'font': {'color': '#ffe43f'},
+  'from': '双海亜美',
+  'label': '風花お姉ちゃん',
+  'to': '豊川風花'},
+ {'font': {'color': '#ffe43f'},
+  'from': '双海真美',
+  'label': '千早お姉ちゃん',
+  'to': '如月千早'},
+ {'font': {'color': '#ffe43f'}, 'from': '双海真美', 'label': '亜美', 'to': '双海亜美'},
+ {'font': {'color': '#ffe43f'},
+  'from': '双海真美',
+  'label': '静香お姉ちゃん',
+  'to': '最上静香'},
+ {'font': {'color': '#ffe43f'},
+  'from': '双海真美',
+  'label': '琴葉お姉ちゃん',
+  'to': '田中琴葉'},
+ {'font': {'color': '#ffe43f'}, 'from': '双海真美', 'label': '朋花様', 'to': '天空橋朋花'},
+ {'font': {'color': '#ffe43f'},
+  'from': '双海真美',
+  'label': '風花お姉ちゃん',
+  'to': '豊川風花'},
+ {'font': {'color': '#01adb9'},
+  'from': '我那覇響',
+  'label': 'あずささん',
+  'to': '三浦あずさ'},
+ {'font': {'color': '#ea5b76'}, 'from': '春日未来', 'label': '翼', 'to': '伊吹翼'},
+ {'font': {'color': '#ea5b76'}, 'from': '春日未来', 'label': '杏奈', 'to': '望月杏奈'},
+ {'font': {'color': '#ea5b76'}, 'from': '春日未来', 'label': '百合子', 'to': '七尾百合子'},
+ {'font': {'color': '#ea5b76'}, 'from': '春日未来', 'label': '歩さん', 'to': '舞浜歩'},
+ {'font': {'color': '#ea5b76'}, 'from': '春日未来', 'label': '可奈', 'to': '矢吹可奈'},
+ {'font': {'color': '#ea5b76'}, 'from': '春日未来', 'label': '環', 'to': '大神環'},
+ {'font': {'color': '#ea5b76'},
+  'from': '春日未来',
+  'label': 'のり子さん',
+  'to': '福田のり子'},
+ {'font': {'color': '#ea5b76'}, 'from': '春日未来', 'label': '可憐さん', 'to': '篠宮可憐'},
+ {'font': {'color': '#ea5b76'}, 'from': '春日未来', 'label': '昴', 'to': '永吉昴'},
+ {'font': {'color': '#6495cf'}, 'from': '最上静香', 'label': '美希さん', 'to': '星井美希'},
+ {'font': {'color': '#6495cf'}, 'from': '最上静香', 'label': '伊織さん', 'to': '水瀬伊織'},
+ {'font': {'color': '#6495cf'}, 'from': '最上静香', 'label': '朋花さん', 'to': '天空橋朋花'},
+ {'font': {'color': '#fed552'},
+  'from': '伊吹翼',
+  'label': 'デコリーナ先輩',
+  'to': '水瀬伊織'},
+ {'font': {'color': '#fed552'}, 'from': '伊吹翼', 'label': '未来', 'to': '春日未来'},
+ {'font': {'color': '#fed552'}, 'from': '伊吹翼', 'label': '茜ちゃん', 'to': '野々原茜'},
+ {'font': {'color': '#fed552'}, 'from': '伊吹翼', 'label': '杏奈', 'to': '望月杏奈'},
+ {'font': {'color': '#fed552'},
+  'from': '伊吹翼',
+  'label': '紗代子ちゃん',
+  'to': '高山紗代子'},
+ {'font': {'color': '#fed552'}, 'from': '伊吹翼', 'label': 'エミリー', 'to': 'エミリー'},
+ {'font': {'color': '#fed552'}, 'from': '伊吹翼', 'label': '環', 'to': '大神環'},
+ {'font': {'color': '#fed552'}, 'from': '伊吹翼', 'label': '瑞希ちゃん', 'to': '真壁瑞希'},
+ {'font': {'color': '#fed552'}, 'from': '伊吹翼', 'label': '昴くん', 'to': '永吉昴'},
+ {'font': {'color': '#92cfbb'}, 'from': '田中琴葉', 'label': '貴音さん', 'to': '四条貴音'},
+ {'font': {'color': '#92cfbb'}, 'from': '田中琴葉', 'label': '律子さん', 'to': '秋月律子'},
+ {'font': {'color': '#92cfbb'}, 'from': '田中琴葉', 'label': '未来', 'to': '春日未来'},
+ {'font': {'color': '#92cfbb'}, 'from': '田中琴葉', 'label': 'エレナ', 'to': '島原エレナ'},
+ {'font': {'color': '#92cfbb'}, 'from': '田中琴葉', 'label': '恵美', 'to': '所恵美'},
+ {'font': {'color': '#92cfbb'}, 'from': '田中琴葉', 'label': '紗代子', 'to': '高山紗代子'},
+ {'font': {'color': '#92cfbb'}, 'from': '田中琴葉', 'label': '亜利沙', 'to': '松田亜利沙'},
+ {'font': {'color': '#92cfbb'}, 'from': '田中琴葉', 'label': '歩', 'to': '舞浜歩'},
+ {'font': {'color': '#92cfbb'}, 'from': '田中琴葉', 'label': '美也', 'to': '宮尾美也'},
+ {'font': {'color': '#92cfbb'}, 'from': '田中琴葉', 'label': 'のり子', 'to': '福田のり子'},
+ {'font': {'color': '#92cfbb'}, 'from': '田中琴葉', 'label': '可憐さん', 'to': '篠宮可憐'},
+ {'font': {'color': '#58a6dc'}, 'from': '佐竹美奈子', 'label': '律子さん', 'to': '秋月律子'},
+ {'font': {'color': '#454341'}, 'from': '所恵美', 'label': '律子さん', 'to': '秋月律子'},
+ {'font': {'color': '#5abfb7'}, 'from': '徳川まつり', 'label': '貴音姫', 'to': '四条貴音'},
+ {'font': {'color': '#ed90ba'}, 'from': '箱崎星梨花', 'label': '亜美さん', 'to': '双海亜美'},
+ {'font': {'color': '#ed90ba'}, 'from': '箱崎星梨花', 'label': '真美さん', 'to': '双海真美'},
+ {'font': {'color': '#ed90ba'},
+  'from': '箱崎星梨花',
+  'label': '杏奈ちゃん',
+  'to': '望月杏奈'},
+ {'font': {'color': '#eb613f'}, 'from': '野々原茜', 'label': 'まこりん', 'to': '菊地真'},
+ {'font': {'color': '#eb613f'}, 'from': '野々原茜', 'label': 'いおりん', 'to': '水瀬伊織'},
+ {'font': {'color': '#eb613f'}, 'from': '野々原茜', 'label': '律子さん', 'to': '秋月律子'},
+ {'font': {'color': '#eb613f'}, 'from': '野々原茜', 'label': 'ヒビキン', 'to': '我那覇響'},
+ {'font': {'color': '#eb613f'}, 'from': '野々原茜', 'label': 'モガミン', 'to': '最上静香'},
+ {'font': {'color': '#eb613f'}, 'from': '野々原茜', 'label': 'ユリッチ', 'to': '七尾百合子'},
+ {'font': {'color': '#eb613f'}, 'from': '野々原茜', 'label': 'ウミミン', 'to': '高坂海美'},
+ {'font': {'color': '#eb613f'}, 'from': '野々原茜', 'label': 'しほりん', 'to': '北沢志保'},
+ {'font': {'color': '#eb613f'}, 'from': '野々原茜', 'label': 'マイハマン', 'to': '舞浜歩'},
+ {'font': {'color': '#eb613f'}, 'from': '野々原茜', 'label': 'ひなたん', 'to': '木下ひなた'},
+ {'font': {'color': '#eb613f'}, 'from': '野々原茜', 'label': '奈緒やん', 'to': '横山奈緒'},
+ {'font': {'color': '#eb613f'}, 'from': '野々原茜', 'label': 'すばるん', 'to': '永吉昴'},
+ {'font': {'color': '#eb613f'}, 'from': '野々原茜', 'label': 'ジュリアン', 'to': 'ジュリア'},
+ {'font': {'color': '#eb613f'}, 'from': '野々原茜', 'label': 'つむりん', 'to': '白石紬'},
+ {'font': {'color': '#7e6ca8'},
+  'from': '望月杏奈',
+  'label': 'やよいちゃん',
+  'to': '高槻やよい'},
+ {'font': {'color': '#7e6ca8'}, 'from': '望月杏奈', 'label': 'ロコ', 'to': 'ロコ'},
+ {'font': {'color': '#7e6ca8'}, 'from': '望月杏奈', 'label': '亜利沙', 'to': '松田亜利沙'},
+ {'font': {'color': '#7e6ca8'}, 'from': '望月杏奈', 'label': 'エミリー', 'to': 'エミリー'},
+ {'font': {'color': '#7e6ca8'},
+  'from': '望月杏奈',
+  'label': 'ひなたちゃん',
+  'to': '木下ひなた'},
+ {'font': {'color': '#c7b83c'},
+  'from': '七尾百合子',
+  'label': 'やよいさん',
+  'to': '高槻やよい'},
+ {'font': {'color': '#c7b83c'}, 'from': '七尾百合子', 'label': '未来', 'to': '春日未来'},
+ {'font': {'color': '#c7b83c'}, 'from': '七尾百合子', 'label': '翼', 'to': '伊吹翼'},
+ {'font': {'color': '#c7b83c'}, 'from': '七尾百合子', 'label': '茜ちゃん', 'to': '野々原茜'},
+ {'font': {'color': '#c7b83c'}, 'from': '七尾百合子', 'label': 'ロコちゃん', 'to': 'ロコ'},
+ {'font': {'color': '#7f6575'}, 'from': '高山紗代子', 'label': '春香さん', 'to': '天海春香'},
+ {'font': {'color': '#7f6575'}, 'from': '高山紗代子', 'label': '響さん', 'to': '我那覇響'},
+ {'font': {'color': '#7f6575'}, 'from': '高山紗代子', 'label': '百合子', 'to': '七尾百合子'},
+ {'font': {'color': '#7f6575'}, 'from': '高山紗代子', 'label': '海美', 'to': '高坂海美'},
+ {'font': {'color': '#7f6575'}, 'from': '高山紗代子', 'label': '美也さん', 'to': '宮尾美也'},
+ {'font': {'color': '#7f6575'}, 'from': '高山紗代子', 'label': '可憐', 'to': '篠宮可憐'},
+ {'font': {'color': '#7f6575'}, 'from': '高山紗代子', 'label': 'ジュリア', 'to': 'ジュリア'},
+ {'font': {'color': '#b54461'}, 'from': '松田亜利沙', 'label': '春香さん', 'to': '天海春香'},
+ {'font': {'color': '#b54461'}, 'from': '松田亜利沙', 'label': '真くん', 'to': '菊地真'},
+ {'font': {'color': '#b54461'}, 'from': '松田亜利沙', 'label': '貴音さん', 'to': '四条貴音'},
+ {'font': {'color': '#b54461'}, 'from': '松田亜利沙', 'label': '律子さん', 'to': '秋月律子'},
+ {'font': {'color': '#b54461'}, 'from': '松田亜利沙', 'label': '可憐さん', 'to': '篠宮可憐'},
+ {'font': {'color': '#b54461'}, 'from': '松田亜利沙', 'label': '昴くん', 'to': '永吉昴'},
+ {'font': {'color': '#b54461'},
+  'from': '松田亜利沙',
+  'label': '桃子ちゃんセンパイ',
+  'to': '周防桃子'},
+ {'font': {'color': '#e9739b'}, 'from': '高坂海美', 'label': 'まこっちゃん', 'to': '菊地真'},
+ {'font': {'color': '#e9739b'}, 'from': '高坂海美', 'label': '亜美', 'to': '双海亜美'},
+ {'font': {'color': '#e9739b'}, 'from': '高坂海美', 'label': '真美', 'to': '双海真美'},
+ {'font': {'color': '#e9739b'}, 'from': '高坂海美', 'label': '響', 'to': '我那覇響'},
+ {'font': {'color': '#e9739b'}, 'from': '高坂海美', 'label': '琴葉', 'to': '田中琴葉'},
+ {'font': {'color': '#e9739b'},
+  'from': '高坂海美',
+  'label': '美奈子先生',
+  'to': '佐竹美奈子'},
+ {'font': {'color': '#e9739b'}, 'from': '高坂海美', 'label': '朋花様', 'to': '天空橋朋花'},
+ {'font': {'color': '#e9739b'}, 'from': '高坂海美', 'label': '歩', 'to': '舞浜歩'},
+ {'font': {'color': '#e9739b'},
+  'from': '高坂海美',
+  'label': 'このみちゃん',
+  'to': '馬場このみ'},
+ {'font': {'color': '#e9739b'}, 'from': '高坂海美', 'label': '環', 'to': '大神環'},
+ {'font': {'color': '#e9739b'}, 'from': '高坂海美', 'label': '美也', 'to': '宮尾美也'},
+ {'font': {'color': '#e9739b'}, 'from': '高坂海美', 'label': '可憐', 'to': '篠宮可憐'},
+ {'font': {'color': '#e9739b'}, 'from': '高坂海美', 'label': '莉緒ねぇ', 'to': '百瀬莉緒'},
+ {'font': {'color': '#e9739b'}, 'from': '高坂海美', 'label': '麗花', 'to': '北上麗花'},
+ {'font': {'color': '#e9739b'}, 'from': '高坂海美', 'label': 'ジュリア', 'to': 'ジュリア'},
+ {'font': {'color': '#f7e78e'}, 'from': '中谷育', 'label': '未来ちゃん', 'to': '春日未来'},
+ {'font': {'color': '#f7e78e'}, 'from': '中谷育', 'label': '茜ちゃん', 'to': '野々原茜'},
+ {'font': {'color': '#f7e78e'}, 'from': '中谷育', 'label': 'ロコちゃん', 'to': 'ロコ'},
+ {'font': {'color': '#f7e78e'}, 'from': '中谷育', 'label': 'エミリーさん', 'to': 'エミリー'},
+ {'font': {'color': '#f7e78e'},
+  'from': '中谷育',
+  'label': 'ひなたちゃん',
+  'to': '木下ひなた'},
+ {'font': {'color': '#f7e78e'}, 'from': '中谷育', 'label': '可奈ちゃん', 'to': '矢吹可奈'},
+ {'font': {'color': '#bee3e3'},
+  'from': '天空橋朋花',
+  'label': '百合子さん',
+  'to': '七尾百合子'},
+ {'font': {'color': '#554171'}, 'from': 'エミリー', 'label': '伊織さま', 'to': '水瀬伊織'},
+ {'font': {'color': '#554171'}, 'from': 'エミリー', 'label': '貴音さま', 'to': '四条貴音'},
+ {'font': {'color': '#e25a9b'}, 'from': '舞浜歩', 'label': '莉緒', 'to': '百瀬莉緒'},
+ {'font': {'color': '#d1342c'},
+  'from': '木下ひなた',
+  'label': '伊織お嬢さん',
+  'to': '水瀬伊織'},
+ {'font': {'color': '#d1342c'},
+  'from': '木下ひなた',
+  'label': '貴音お嬢さん',
+  'to': '四条貴音'},
+ {'font': {'color': '#d1342c'},
+  'from': '木下ひなた',
+  'label': '亜美シショー',
+  'to': '双海亜美'},
+ {'font': {'color': '#d1342c'},
+  'from': '木下ひなた',
+  'label': '真美センセー',
+  'to': '双海真美'},
+ {'font': {'color': '#d1342c'},
+  'from': '木下ひなた',
+  'label': 'まつり姫さん',
+  'to': '徳川まつり'},
+ {'font': {'color': '#d1342c'},
+  'from': '木下ひなた',
+  'label': '杏奈ちゃん',
+  'to': '望月杏奈'},
+ {'font': {'color': '#d1342c'}, 'from': '木下ひなた', 'label': 'ロコちゃん', 'to': 'ロコ'},
+ {'font': {'color': '#d1342c'},
+  'from': '木下ひなた',
+  'label': '志保ちゃん',
+  'to': '北沢志保'},
+ {'font': {'color': '#d1342c'},
+  'from': '木下ひなた',
+  'label': '可奈ちゃん',
+  'to': '矢吹可奈'},
+ {'font': {'color': '#d1342c'},
+  'from': '木下ひなた',
+  'label': '千鶴お嬢さん',
+  'to': '二階堂千鶴'},
+ {'font': {'color': '#d1342c'},
+  'from': '木下ひなた',
+  'label': '桃子センパイ',
+  'to': '周防桃子'},
+ {'font': {'color': '#f5ad3b'}, 'from': '矢吹可奈', 'label': 'ロコちゃん', 'to': 'ロコ'},
+ {'font': {'color': '#f5ad3b'},
+  'from': '矢吹可奈',
+  'label': '百合子ちゃん',
+  'to': '七尾百合子'},
+ {'font': {'color': '#f5ad3b'}, 'from': '矢吹可奈', 'label': '海美ちゃん', 'to': '高坂海美'},
+ {'font': {'color': '#788bc5'},
+  'from': '横山奈緒',
+  'label': 'あずささん',
+  'to': '三浦あずさ'},
+ {'font': {'color': '#788bc5'}, 'from': '横山奈緒', 'label': '莉緒', 'to': '百瀬莉緒'},
+ {'font': {'color': '#f19557'},
+  'from': '二階堂千鶴',
+  'label': '雪歩ちゃん',
+  'to': '萩原雪歩'},
+ {'font': {'color': '#f19557'}, 'from': '二階堂千鶴', 'label': 'コロちゃん', 'to': 'ロコ'},
+ {'font': {'color': '#f19557'}, 'from': '二階堂千鶴', 'label': '奈緒', 'to': '横山奈緒'},
+ {'font': {'color': '#ee762e'},
+  'from': '大神環',
+  'label': 'やよいちゃん',
+  'to': '高槻やよい'},
+ {'font': {'color': '#ee762e'}, 'from': '大神環', 'label': 'うみみ', 'to': '高坂海美'},
+ {'font': {'color': '#ee762e'},
+  'from': '大神環',
+  'label': '可憐お姉ちゃん',
+  'to': '篠宮可憐'},
+ {'font': {'color': '#7278a8'}, 'from': '豊川風花', 'label': '朋花さん', 'to': '天空橋朋花'},
+ {'font': {'color': '#7278a8'},
+  'from': '豊川風花',
+  'label': '千鶴ちゃん',
+  'to': '二階堂千鶴'},
+ {'font': {'color': '#d7a96b'}, 'from': '宮尾美也', 'label': '千早さん', 'to': '如月千早'},
+ {'font': {'color': '#d7a96b'}, 'from': '宮尾美也', 'label': '響さん', 'to': '我那覇響'},
+ {'font': {'color': '#d7a96b'}, 'from': '宮尾美也', 'label': '琴葉ちゃん', 'to': '田中琴葉'},
+ {'font': {'color': '#d7a96b'},
+  'from': '宮尾美也',
+  'label': 'まつりちゃん',
+  'to': '徳川まつり'},
+ {'font': {'color': '#d7a96b'}, 'from': '宮尾美也', 'label': '奈緒ちゃん', 'to': '横山奈緒'},
+ {'font': {'color': '#d7a96b'}, 'from': '宮尾美也', 'label': '紬ちゃん', 'to': '白石紬'},
+ {'font': {'color': '#eceb70'}, 'from': '福田のり子', 'label': '律子さん', 'to': '秋月律子'},
+ {'font': {'color': '#eceb70'}, 'from': '福田のり子', 'label': '莉緒姉', 'to': '百瀬莉緒'},
+ {'font': {'color': '#eceb70'}, 'from': '福田のり子', 'label': '麗花さん', 'to': '北上麗花'},
+ {'font': {'color': '#99b7dc'}, 'from': '真壁瑞希', 'label': '貴音さん', 'to': '四条貴音'},
+ {'font': {'color': '#99b7dc'}, 'from': '真壁瑞希', 'label': '伴田さん', 'to': 'ロコ'},
+ {'font': {'color': '#b63b40'}, 'from': '篠宮可憐', 'label': '千早さん', 'to': '如月千早'},
+ {'font': {'color': '#b63b40'}, 'from': '篠宮可憐', 'label': '雪歩ちゃん', 'to': '萩原雪歩'},
+ {'font': {'color': '#b63b40'},
+  'from': '篠宮可憐',
+  'label': 'ジュリアさん',
+  'to': 'ジュリア'},
+ {'font': {'color': '#f19591'}, 'from': '百瀬莉緒', 'label': 'ロコ', 'to': 'ロコ'},
+ {'font': {'color': '#f19591'}, 'from': '百瀬莉緒', 'label': '歩', 'to': '舞浜歩'},
+ {'font': {'color': '#f19591'},
+  'from': '百瀬莉緒',
+  'label': 'このみ姉さん',
+  'to': '馬場このみ'},
+ {'font': {'color': '#6bb6b0'}, 'from': '北上麗花', 'label': '律子さん', 'to': '秋月律子'},
+ {'font': {'color': '#6bb6b0'}, 'from': '北上麗花', 'label': 'あゆあゆ', 'to': '舞浜歩'},
+ {'font': {'color': '#efb864'}, 'from': '周防桃子', 'label': '亜美さん', 'to': '双海亜美'},
+ {'font': {'color': '#efb864'}, 'from': '周防桃子', 'label': '真美さん', 'to': '双海真美'},
+ {'font': {'color': '#d7385f'}, 'from': 'ジュリア', 'label': 'ヤッコ', 'to': '高槻やよい'},
+ {'font': {'color': '#d7385f'}, 'from': 'ジュリア', 'label': 'リツ姉', 'to': '秋月律子'},
+ {'font': {'color': '#d7385f'}, 'from': 'ジュリア', 'label': 'シズ', 'to': '最上静香'},
+ {'font': {'color': '#d7385f'}, 'from': 'ジュリア', 'label': 'サヨ', 'to': '高山紗代子'},
+ {'font': {'color': '#d7385f'}, 'from': 'ジュリア', 'label': 'ヒナ', 'to': '木下ひなた'},
+ {'font': {'color': '#d7385f'}, 'from': 'ジュリア', 'label': 'フーカ', 'to': '豊川風花'},
+ {'font': {'color': '#d7385f'}, 'from': 'ジュリア', 'label': 'ミャオ', 'to': '宮尾美也'},
+ {'font': {'color': '#d7385f'}, 'from': 'ジュリア', 'label': 'レイ', 'to': '北上麗花'},
+ {'font': {'color': '#d7385f'}, 'from': 'ジュリア', 'label': 'モモ', 'to': '周防桃子'},
+ {'font': {'color': '#d7385f'}, 'from': 'ジュリア', 'label': 'ムギ', 'to': '白石紬'},
+ {'font': {'color': '#d7385f'}, 'from': 'ジュリア', 'label': 'カオリ', 'to': '桜守歌織'},
+ {'font': {'color': '#274079'},
+  'from': '桜守歌織',
+  'label': 'このみさん',
+  'to': '馬場このみ'}]);
+
+  // create a network
+  var container = document.getElementById('mynetwork');
+  var data = {
+    nodes: nodes,
+    edges: edges
+  };
+  var options = {
+      nodes: {
+          shape: 'circularImage',
+          shapeProperties: {
+            //useBorderWithImage: true,
+          },
+          chosen: {
+              node:
+                function(values, id, selected, hovering) {
+                  console.log(values, id, selected, hovering);
+                }
+          },
+          scaling: {
+            min: 10,
+            max: 50,
+          }
+      },
+      edges: {
+          arrows: 'to',
+          font: {
+            size: 8,
+          },
+          color: {
+              opacity: 0.2,
+          },
+          chosen: {
+            label: function(values, id, selected, hovering){
+              values.size = 20;
+              //values.color = '#000000';
+              //console.log('edge',values, id, selected, hovering);
+            },
+            edge: function(values, id, selected, hovering){
+              values.opacity = 1;
+              values.width = 3;
+              //console.log('edge',values, id, selected, hovering);
+            },
+          }
+      },
+      physics: {
+        barnesHut: {
+            avoidOverlap: 0.0,
+        }
+      }
+
+  };
+  var network = new vis.Network(container, data, options);
+  network.on('selectEdge', function(params){
+    //選択されたエッジ以外を不可視化する。
+    const selected_ids = params['edges'];
+    const all_ids = edges.getIds();
+    let updated_edges = [];
+    for (let id of all_ids){
+      //選択idに一致したら抜ける
+      if (selected_ids.includes(id)){
+        continue;
+      }
+      const edge = edges.get(id);
+      edge.hidden = true;
+      updated_edges.push(edge);
+      
+      //console.log(id);
+    }
+    //まとめてアップデート(ひとつひとつアップデートすると非常に遅い)
+    edges.update(updated_edges);
+    //console.log('selectEdge:',ids);
+
+    //エッジにつながっていないノードを半透明にする
+    let updated_nodes = [];
+    //つながったノードを抽出
+    let connected_nodeids = [];
+    for (let id of selected_ids){
+      const nodeids = network.getConnectedNodes(id);
+      connected_nodeids = connected_nodeids.concat(nodeids);
+    }
+    console.log(connected_nodeids);
+    //つながっていないノードを抽出
+    const all_nodeids = nodes.getIds();
+    for (let id of all_nodeids){
+      if (connected_nodeids.includes(id)){
+        continue;
+      }
+      const node = nodes.get(id);
+      node.opacity = 0.2;
+      updated_nodes.push(node);
+
+    }
+    nodes.update(updated_nodes);
+
+  });
+  network.on('deselectEdge', function(params){
+    console.log('deselectEdge:', params);
+    //選択解除されたら全部を可視化
+    const all_ids = edges.getIds();
+    let updated_edges = [];
+    for (let id of all_ids){
+      const edge = edges.get(id);
+      edge.hidden = false;
+      updated_edges.push(edge);
+    }
+    //まとめてアップデート(ひとつひとつアップデートすると非常に遅い)
+    edges.update(updated_edges);
+
+    //半透明にしたノードを元に戻す
+    const all_nodeids = nodes.getIds();
+    let updated_nodes = [];
+    for (let id of all_nodeids){
+      const node = nodes.get(id);
+      node.opacity = 1;
+      updated_nodes.push(node);
+    }
+    nodes.update(updated_nodes);
+  });
+/*
+  network.on('selectNode', function(params){
+    //選択されたノード以外を半透明にする。
+    const selected_ids = params['nodes'];
+    const all_ids = nodes.getIds();
+    let updated_nodes = [];
+    for (let id of all_ids){
+      //選択idに一致したら抜ける
+      if (selected_ids.includes(id)){
+        continue;
+      }
+      const node = nodes.get(id);
+      node.opacity = 0.5;
+      updated_nodes.push(node);
+      
+      //console.log(id);
+    }
+    //まとめてアップデート(ひとつひとつアップデートすると非常に遅い)
+    nodes.update(updated_nodes);
+    //console.log('selectEdge:',ids);
+
+  });
+  network.on('deselectNode', function(params){
+    //選択解除されたら透過度を元に戻す
+    const all_ids = nodes.getIds();
+    let updated_nodes = [];
+    for (let id of all_ids){
+      const node = nodes.get(id);
+      node.opacity = 1;
+      updated_nodes.push(node);
+    }
+    //まとめてアップデート(ひとつひとつアップデートすると非常に遅い)
+    nodes.update(updated_nodes);
+  });
+  */
+</script>
+  </body>
+</html>
