@@ -25,7 +25,7 @@
 
 <body>
 	<h1>画像マーカー散布図</h1>
-	<p>下のような形式のCSVファイル(1列目：x, 2列目:y, 3列目:画像ファイル)を読み込むと、指定した画像をマーカーに使った散布図を生成します。このhtmlファイルをローカルに保存し、画像ファイルはご自身で用意してお使い下さい。</p>
+	<p>下のような形式のCSVファイル(1列目：x, 2列目:y, 3列目:画像ファイル, 4列目:色, 5列目:ラベル)を読み込むと、指定した画像をマーカーに使った散布図を生成します。このhtmlファイルをローカルに保存し、画像ファイルはご自身で用意してお使い下さい。</p>
 	<pre>
 身長[cm],  体重[kg],  image(オプション),  color(オプション),     label(オプション)
 155,       48,        icons/mano.png,    #ffbad6,               真乃
@@ -33,7 +33,11 @@
 157,       46,        icons/meguru.png,  #ffe012,               めぐる
 	</pre>
 	<div>
-		<input type="file" id="inputfile" accept=".csv"/>
+        <input type="file" id="inputfile" accept=".csv" style="display:none;" /><button><label for="inputfile">CSVファイルを選択してください</label></button>
+        <select id="encoding">
+            <option value="utf-8">UTF-8</option>
+            <option value="Shift-JIS">S-JIS</option>
+        </select>
 	</div>
 	<div class="chart-container" style="position: relative; margin: 30px; height:80vh; width:80vw; float: left;">
 		<canvas id="canvas"></canvas>
@@ -105,8 +109,11 @@ function min(arr){
 
 function open_file(){
     const inputfile = document.getElementById('inputfile').files[0];
+    const encoding = document.getElementById('encoding').value;
+    //同じファイルを開き直してもchangeイベントが発生しない。なのでリセットしておく。
+    document.getElementById("inputfile").value = '';
     const reader = new FileReader();
-    reader.readAsText(inputfile);
+    reader.readAsText(inputfile, encoding);
     reader.onload = function() {
         const lines = reader.result.split("\n");
         let datasets = [];
@@ -130,6 +137,8 @@ function open_file(){
                 5行目：ラベル（オプショナル）
                 */
                 //console.log(items[0], items[1], items[2]);
+                //数値じゃなかったり空白だったりしたらスキップ
+                if (isNaN(items[0]) || items[0] == '' || isNaN(items[1]) || items[1] == '') continue;
                 const x = parseFloat(items[0]);
                 const y = parseFloat(items[1]);
                 let pointStyle = 'circle';
@@ -163,7 +172,6 @@ function open_file(){
                 //ラベルを取得
                 if (items.length > 4){
                     label = items[4];
-                    console.log(label);
                     //datalabels.labels = [label];
                     
                     datalabels.labels.title = label;
