@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>ミリシタ4コマ漫画を分析する</title>
+	<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+	<style>
+		body {
+			
+			padding: 50px;
+		}
+
+
+		pre {
+			background-color: #eee;
+		}
+
+
+
+		.author {
+			
+		}
+
+		table {
+			border-collapse: collapse;
+			margin: auto;
+		}
+
+		thead tr {
+			border-bottom: 2px solid gray;
+		}
+
+		th,
+		td {
+			padding: 5px 10px;
+		}
+
+		.fig {
+			text-align: center;
+		}
+		p {
+			text-indent: 1em;
+		}
+		header, footer{
+			position: fixed;
+			padding: 5px;
+			width: 100%;
+			height: 1.5em;
+			background-color: white;
+			font-size: small;
+
+		}
+		header {
+			top: 0px;
+			border-bottom: 1px solid gray;
+			
+		}
+		footer {
+			bottom: 0px;
+			border-top: 1px solid gray;
+		}
+		img {
+			max-width: 100%;
+		}
+
+		h1, h2, h3 {
+			margin-top: 1em;
+			font-family: sans-serif;
+			
+		}
+		h1 {
+			text-align: center;
+			font-size: 2em;
+		}
+		h2 {
+			margin-left: 0em;
+			font-size: 1.5em;
+			border-bottom: solid;
+		}
+		h3 {
+			margin-left:1em;
+			font-size: 1.2em;
+		}
+		caption {
+			font-weight: bold;
+		}
+		strong {
+			color: red;
+		}
+
+	</style>
+
+
+</head>
+
+<body>
+	<h1><a href="https://twitter.com/search?q=%23%E3%83%9F%E3%83%AA%E3%82%B7%E3%82%BF4%E3%82%B3%E3%83%9E%20from%3Aimasml_theater&src=typed_query&f=live">ミリシタ4コマ漫画</a>を分析する</h1>
+	<p class="author">by <a href="https://twitter.com/tankaru">Na2CO3 P</a></p>
+	<p>この記事は<a href="https://adventar.org/calendars/4976">アイドルマスター Advent Calendar 2020</a>の記事になる予定です。</p>
+	<div style="float: right; padding-left:1em; margin-left: 1em; background-color: white;">
+		<blockquote class="twitter-tweet"><p lang="ja" dir="ltr">続いて、茜ちゃんです♪ <a href="https://twitter.com/hashtag/%E3%83%9F%E3%83%AA%E3%82%B7%E3%82%BF?src=hash&amp;ref_src=twsrc%5Etfw">#ミリシタ</a> <a href="https://twitter.com/hashtag/%E3%83%9F%E3%83%AA%E3%82%B7%E3%82%BF4%E3%82%B3%E3%83%9E?src=hash&amp;ref_src=twsrc%5Etfw">#ミリシタ4コマ</a> <a href="https://twitter.com/hashtag/4%E3%82%B3%E3%83%9E?src=hash&amp;ref_src=twsrc%5Etfw">#4コマ</a> <a href="https://twitter.com/hashtag/4%E3%82%B3%E3%83%9E%E6%BC%AB%E7%94%BB?src=hash&amp;ref_src=twsrc%5Etfw">#4コマ漫画</a> <a href="https://t.co/dgHP32Pgkv">pic.twitter.com/dgHP32Pgkv</a></p>&mdash; ミリオンライブ！ シアターデイズ【公式】 (@imasml_theater) <a href="https://twitter.com/imasml_theater/status/1259770722441986048?ref_src=twsrc%5Etfw">May 11, 2020</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+	<blockquote class="twitter-tweet"><p lang="ja" dir="ltr">【再掲載】続いて、ジュリアちゃんです♪ <a href="https://twitter.com/hashtag/%E3%83%9F%E3%83%AA%E3%82%B7%E3%82%BF?src=hash&amp;ref_src=twsrc%5Etfw">#ミリシタ</a> <a href="https://twitter.com/hashtag/%E3%83%9F%E3%83%AA%E3%82%B7%E3%82%BF4%E3%82%B3%E3%83%9E?src=hash&amp;ref_src=twsrc%5Etfw">#ミリシタ4コマ</a> <a href="https://twitter.com/hashtag/4%E3%82%B3%E3%83%9E?src=hash&amp;ref_src=twsrc%5Etfw">#4コマ</a> <a href="https://twitter.com/hashtag/4%E3%82%B3%E3%83%9E%E6%BC%AB%E7%94%BB?src=hash&amp;ref_src=twsrc%5Etfw">#4コマ漫画</a> <a href="https://t.co/rFGrDym9aD">pic.twitter.com/rFGrDym9aD</a></p>&mdash; ミリオンライブ！ シアターデイズ【公式】 (@imasml_theater) <a href="https://twitter.com/imasml_theater/status/1273220122585346054?ref_src=twsrc%5Etfw">June 17, 2020</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+	<blockquote class="twitter-tweet"><p lang="ja" dir="ltr">制服シリーズに登場した紗代子ちゃんの4コマまんがを公開します♪ <a href="https://twitter.com/hashtag/%E3%83%9F%E3%83%AA%E3%82%B7%E3%82%BF?src=hash&amp;ref_src=twsrc%5Etfw">#ミリシタ</a> <a href="https://twitter.com/hashtag/%E3%83%9F%E3%83%AA%E3%82%B7%E3%82%BF4%E3%82%B3%E3%83%9E?src=hash&amp;ref_src=twsrc%5Etfw">#ミリシタ4コマ</a> <a href="https://twitter.com/hashtag/4%E3%82%B3%E3%83%9E?src=hash&amp;ref_src=twsrc%5Etfw">#4コマ</a> <a href="https://twitter.com/hashtag/4%E3%82%B3%E3%83%9E%E6%BC%AB%E7%94%BB?src=hash&amp;ref_src=twsrc%5Etfw">#4コマ漫画</a> <a href="https://t.co/oL8CvPhVvj">pic.twitter.com/oL8CvPhVvj</a></p>&mdash; ミリオンライブ！ シアターデイズ【公式】 (@imasml_theater) <a href="https://twitter.com/imasml_theater/status/1153606042732773376?ref_src=twsrc%5Etfw">July 23, 2019</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+	</div>
+	<h2 >まとめ</h2>
+	<ul>
+		<li>じゅりあかに注目！</li>
+		<li>プロデューサーにもアイドルにもガシャは公平</li>
+		<li>4コマはいいぞ</li>
+	</ul>
+	<h2 >始めに</h2>
+	<p>アイドルマスター ミリオンライブ! シアターデイズ(以下ミリシタ)のアプリ内のコミックメニューには、&quot;Blooming Clover&quot;, &quot;Brand New Song&quot;,
+		&quot;4コマ&quot;の3つの漫画作品が掲示されています。漫画を含むアイドルマスターの作品群は一般的にパラレルワールドであるとされており[1]、これらの漫画作品もミリシタとは別時空にあるパラレルワールドであると考えられます。しかしこのうち「4コマ」漫画に関しては、アプリ内で直接閲覧することができ、他の作品とは立ち位置が異なります。「4コマ」に関してはミリシタと同じ世界に属していると考えてよいのではないでしょうか？
+	</p>
+
+	<p>そこで、ミリシタの世界を理解する一助として、4コマのデータを分析を試みました。今回は4コマに登場したアイドルの登場回数を集計して、定量的な評価をおこないました。定性的な評価(話の内容など)は行いませんでした。</p>
+	<p>分析にあたっては以下の内容を前提としました。</p>
+	<ul>
+		<li>2020/11/19Twitter掲載分までの内容を集計</li>
+		<li>4コマ内で名前が記載されている(アプリ版では下部にリストアップされている)アイドルを集計した。4コマに登場しても名前が掲載されていないアイドルは登場回数に含めなかった。</li>
+	</ul>
+	<p>ちなみに私は律子さん担当です。</p>
+	<p>※注意：データ分析や統計処理をしてますが、調べながらやっている素人です。間違っている可能性が高いです。誤りに気づいた方はぜひご指摘ください。</p>
+	<h2 >4コマ基礎知識</h2>
+	<p>まずは4コマを読んでいる人ならみんな知っている知識の再確認です。</p>
+	<ul>
+		<li>4コマはガシャに登場したSSRアイドルおよびミリオンクローゼットSRアイドルを主役にした漫画である。</li>
+		<li>Twitterでは「＊＊ちゃんです」と紹介されたアイドル、アプリでは登場人物一覧の左上に表示されたアイドルが主役である。</li>
+		<li>作画はmizuki, <a href="https://twitter.com/ima8765">ima</a>, <a href="https://twitter.com/pattundo">せるげい</a>,
+			<a href="https://twitter.com/mowahu">たはらえむ</a>, <a href="https://twitter.com/komore">木漏</a>, <a
+				href="https://twitter.com/healstar">ひーりんぐ</a>, <a
+				href="https://twitter.com/nagian">凪庵</a>の7名が担当している。作画者は書籍版で確認が可能。</li>
+		<li>2017年12月から開始された。ミリシタ実装日(2017年6月)にはまだなかったので、初期のSSRアイドルを主役にした4コマは存在しない。</li>
+		<li>エイプリルフール回(これまで2回実施)はガシャの内容と関係なく制作されており、主役は設定されていない。</li>
+		<li>2周年イベントで公開された2話(Jelly Pop Beans/幕間MC, トゥインクルリズム/誤解です！)は<a
+				href="https://www.amazon.co.jp/gp/product/B08DX9N323">書籍版2</a>にのみ掲載されている。(なおこの2話は今回の解析には含めない)</li>
+		<li>アプリの[コミュ]-[エトセトラ]からは、主役回を閲覧できる。</li>
+		<li>「<a
+				href="https://twitter.com/imasml_theater/status/1153606042732773376">今日も風紀は正常です！</a>」はTwitterに掲載されているが、アプリには掲載されていない。書籍版には掲載。
+		</li>
+		<li>書籍版は改変されている箇所がある。第一話「<a
+				href="https://twitter.com/imasml_theater/status/945947882296713217?s=20">ジュリアの確信</a>」ではあずささんが登場するが、アプリ版とTwitter版では名前が掲載されていない。書籍版では名前が掲載されている。
+		</li>
+	</ul>
+	<h2 >4コマ基礎データ</h2>
+	<p>手作業で4コマに登場したアイドルを集計しました。2020/11/19Twitter掲載分までの主なデータは以下のとおりです。集計したデータは<a
+			href="https://docs.google.com/spreadsheets/d/14KC8lHOe0S-ue4UAJ7uWfjGmhmcPYsxALOX3myee_rU/">Google
+			sheetsで公開</a>しています。</p>
+			<ul>
+				<li>
+					話数：296話
+				</li>
+				<li>
+					のべ登場人数：865人
+				</li>
+				<li>
+					平均登場人数：2.9人
+				</li>
+				<li>
+					最多登場アイドル：桃子、奈緒、莉緒、亜利沙(計22回)
+				</li>
+				<li>
+					最少登場アイドル：あずささん(計9回)、(参考：小鳥さん：計7回)
+				</li>
+				<li>
+					最多登場人数(名前が表示されているアイドルの数)：8名(「<a
+						href="https://twitter.com/imasml_theater/status/1154707937597673474?s=20">そんなこと決められません…！</a>」)
+				</li>
+				<li>
+					社長は2回、早坂さんは1回、プロデューサーは35回登場している。ただしこれらの登場人物は今回の解析に含めない。
+				</li>
+				<li>
+					登場回数の集計グラフは以下のとおり(「主役回」は主役として登場した回数、「脇役回」は主役以外で登場した回数)
+					<br><div class="fig"><img src="2020-11-22-18-37-45.png" alt=""></div>
+				</li>
+				<li>
+					ちなみにプロデューサーと一緒に登場した回数が最も多いのは翼で5回
+					<br><div class="fig"><img src="2020-11-22-19-18-41.png" alt=""></div>
+				</li>
+			</ul>
+	<h2>公式だけど公式じゃない、新たなユニットの可能性を見出す</h2>
+	<h3 >背景</h3>
+	<p>前述のとおり、4コマは1話平均2.9人が登場しています。登場するアイドルの組み合わせは様々であり、多様で魅力的なやり取りが繰り広げられています。中には特定の組み合わせをよく見かけるような気もします。</p>
+	<p>アイドルが同じ回に登場するということは、そのアイドルは行動をともにしていたということであり、一緒にいることが多いということです。すなわち、同じ話に登場したアイドルは、仲が良いと言えるのではないでしょうか？</p>
+	<p>そこで、どのアイドル同士の組み合わせが多いのか、階層型クラスター分析で調べてみました。同じクラスターに入ったアイドルは仲がよいはずであり、新たな仲良しユニットの可能性が見えかもしれません。</p>
+	<p>階層型クラスター分析とは何なのか、結果のグラフを見たらなんとなくわかるかと思うので詳細は省きます。近い関係にいる人同士をグループ化する技術です。私はこのサイト[2]で勉強しました。</p>
+	<h3 >方法</h3>
+	<p>分析には統計分析フリーソフト&quot;R&quot;および統合開発環境&quot;<a href="https://rstudio.com/">R Studio</a>&quot;を使いました。</p>
+	<div class="fig"><img src="2020-11-22-19-49-05.png" alt=""></div>
+	<p>各話に登場したアイドルを1、登場していないアイドルを0として、次のようなCSVファイルを作成しました。</p>
+	<div class="fig"><img src="2020-11-22-19-53-16.png" alt=""></div>
+	<p>R Studioに次のスクリプトを入力し、階層型クラスター分析を行いました。</p>
+<code><pre>
+million<-read.table("million4koma.csv", header=T, sep=",", row.names=1)
+million.d<- dist(million)
+million.hc<-hclust(million.d,method="ward.D")
+plot(million.hc)
+</pre></code>
+	<h3 >結果</h3>
+	<p>解析結果を次図に示します。つながっている部分が下にあるほど強固なつながりがあります。</p>
+	<div class="fig"><img src="2020-11-22-19-58-34.png" alt=""></div>
+	<p>比較的強いつながりがある組み合わせに名前を付けたものが次の図です。</p>
+	<div class="fig"><img src="2020-11-22-20-45-24.png" alt=""></div>
+	<p>ほとんどがよく見る組み合わせですね。妥当といえば妥当な結果になりました。</p>
+	<p>個人的にちょっと面白い組み合わせができたかなと思うのは&quot;ジュリア×茜&quot;ですね。この組み合わせは計4話に登場しています。</p>
+	<ul>
+		<li>https://twitter.com/imasml_theater/status/999215860509233152</li>
+		<li>https://twitter.com/imasml_theater/status/1068429678313201665</li>
+		<li>https://twitter.com/imasml_theater/status/1259770722441986048</li>
+		<li>https://twitter.com/imasml_theater/status/1273220122585346054</li>
+	</ul>
+	<p>茜のボケとジュリアのツッコミがうまくかみ合って、夫婦漫才のような雰囲気を醸し出しています。この半歩引いて周囲を客観視できるアイドル同士が相手の内面を互いに赤裸々にしあうスパイラルに突入して際限なくなる様がいいと思います。</p>
+	<p>他には&quot;千鶴×雪歩&quot;や&quot;風花×歌織&quot;あたりが明確な名前がまだない(?)ユニットですが、&quot;千鶴×雪歩&quot;はユニット名はないもののPersona
+		Voiceで共演済みですし、&quot;風花×歌織&quot;は4Luxuryの半身ですね。</p>
+	<p>ちなみに律子さんは美希と緩やかなつながりがあるようです。&quot;みきりつ&quot;も人気のある組み合わせであり妥当な分析結果だと言えますね。</p>
+	<h3 >結論</h3>
+	<p>&quot;ジュリア×茜&quot;に注目！</p>
+	<h2
+		>
+		ミリシタに潜む差別を糾弾せよ！</h2>
+	<h3 >背景</h3>
+	<p>上に出した登場回数グラフを再掲します。</p>
+	<div class="fig"><img src="2020-11-22-18-37-45.png" alt=""></div>
+	<p>亜利沙と小鳥さんの登場回数は3倍以上違います。あずささんとの比較でも2倍以上違います。なぜこんなに差があるのでしょうか？</p>
+	<p>登場回数の内訳を見ると、「主役」として登場する回数はどのアイドルもあまり変わりません。主役回はSSRカードの登場で決まるものであり、SSR枚数は平等なので主役回数は平等です。</p>
+	<p>「脇役」(ここでは「主役ではない」という意味であり、ネガティブな意図はありません)としての登場回数に差があるということです。脇役登場回数をグラフ化してみましょう。</p>
+	<div class="fig"><img src="2020-11-22-21-26-20.png" alt=""></div>
+	<p>あずささんと真は登場回数が3回であるのに対し、美咲さんは20回です。約7倍の差があります。アイドルトップの亜利沙(18回)との比較でも6倍の差があります。</p>
+	<p><strong>明らかに登場回数に差が付けられています！これは差別です！「ひとりも手放さない」[3]の精神はどこに行ったのでしょうか？</strong></p>
+	<p>では差別が行われている実態を統計で明らかにしましょう。</p>
+	<h3 >方法および結果</h3>
+	<p>もし「脇役回」への採用が公平に(ランダムに)行われているのだとすると、脇役回登場回数は正規分布になるはずです。正規分布にならなかったら、それが差別の証拠です。</p>
+	<p>そこで脇役回登場回数の正規性を調べます。<a
+			href="https://ja.wikipedia.org/wiki/%E3%82%B7%E3%83%A3%E3%83%94%E3%83%AD%E2%80%93%E3%82%A6%E3%82%A3%E3%83%AB%E3%82%AF%E6%A4%9C%E5%AE%9A">シャピロ–ウィルク検定</a>を使うと、サンプルの正規性を評価できます。有意水準5%で検定しましょう。
+	</p>
+<code><pre>
+wakiyaku<-read.table("4koma_count.csv", header=F, sep=",", row.names=1)
+x=wakiyaku$V2
+shapiro.test(x)
+</pre></code>
+
+<code><pre>
+	Shapiro-Wilk normality test
+
+data:  x
+W = 0.98464, p-value = 0.7143
+</pre></code>
+
+	<p>p値71% &gt;&gt; 有意水準5%です。正規分布でないとは到底言えなさそうです(正規分布であるとは言っていない)。</p>
+	<p>念のため正規性を評価するグラフも描きましょう。<a href="https://bellcurve.jp/statistics/glossary/2071.html">Q-Qプロット</a>を描きます。プロットが赤い線の上に乗ったら正規分布になっています。</p>
+<code><pre>
+qqnorm(x)
+qqline(x, col=2)
+</pre></code>
+<div class="fig"><img src="2020-11-22-21-54-27.png" alt=""></div>
+
+	<p>ちゃんと乗っていますね。<strong>良かった！差別されているアイドルはいなかったんだね！</strong></p>
+	<p>まずはひと安心です。</p>
+	<p>ではなぜ7倍もの差が付いたのでしょうか？</p>
+	<p>あらためて計算してみましょう。</p>
+	<p>基礎データの章で、1話の平均登場人数は2.9人であることを紹介しました。脇役の登場人数は1.9人ということです。登場するアイドル＋事務員の人数は54名で、内一人は主役として登場するので、53人から1.9人が脇役に選ばれることになります。脇役に選ばれる確率は3.6%です。
+	</p>
+	<p>これまで4コマは296話が掲載されています。3.6%の確率であたるくじを296回引いたときに何回あたるかという計算です。二項分布で計算します。</p>
+	<div class="fig"><img src="2020-11-22-22-36-05.png" alt=""></div>
+	<p>理論的には、4コマに脇役として登場する回数は10回の人が最も多くて6.7人であるという計算結果になりました。実際の4コマデータでは、登場回数10回の人は6人ですので大体あっています。登場回数が少ない領域や多い領域では理論値と差がありますがバラツキの範囲でしょうかね？(296回の試行で3回しか選ばれなかった人が2人もいますが、理論的には0.23人しかいないはずです。20回も選ばれた人が1人いますが、0.17人しかいないはずです。ちょっとこのあたりは恣意的なものを感じてしまいますが、正規性は確認できたので恣意性はないはずです。ないったらないの！)
+	</p>
+	<p>ということで、ミリシタ4コマの登場回数は理論的にほぼ説明することができましたので、登場人物の選び方に差別がないことが再確認できました。</p>
+	<h3 >4コマとガシャ</h3>
+	<p>……と、ここまで来て、偶然ではありますが気になる数字に遭遇しましたよね。3.6%と296回です。これ、天井ガシャSSRの数字ですね。SSR確率は3%、天井は300回。天井までガシャを引いたときにSSRを何枚入手できるのか。
+	</p>
+	<p>3%と300回に微修正してグラフを描いてみましょう。ついでに累積確率も描きます。</p>
+	<div class="fig"><img src="2020-11-22-23-06-57.png" alt=""></div>
+	<p>天井300回まで引いたとき、上位10%の人はSSRを12枚以上入手できますが、下位10%の人のSSR入手枚数は5枚以下です。悲しいけどこれが確率なのよね。</p>
+	<h3 >平等と公平</h3>
+	<p>話を戻して、4コマ登場回数についても意図的に差を付けられているわけではなく、確率の問題であると言えそうです。主役回数は平等で、脇役回数は公平です。「ひとりも手放さない」[3]やり方にも、平等なやり方と公平なやり方があるということです。
+	</p>
+	<div class="fig"><img src="2020-11-22-23-20-38.png" alt=""><br><caption>主役回：平等</caption></div>
+		<div class="fig"><img src="2020-11-22-21-26-20.png" alt=""><br><caption>脇役回：公平</caption></div>
+	<p>プロデューサーは3%の確率に一喜一憂しますが、アイドル達には3.6%の確率に一喜一憂があるのかもしれません…</p>
+	<h3 >結論</h3>
+	<p>美咲さんは豪運の持ち主</p>
+	<h2 >References</h2>
+	<p>[1] 坂上陽三、<a href="https://idolmaster.jp/blog/?p=3694">【坂上です】ワンフォーオールの世界感</a>、2014</p>
+	<p>[2] 金明哲、<a href="https://www1.doshisha.ac.jp/~mjin/R/Chap_28/28.html">Rとクラスター分析（１）</a></p>
+	<p>[3] 藤本記子(作詞)、<a href="https://www.youtube.com/watch?v=cxtxp2FXh-U">UNION!!</a>, 2018</p>
+	<h2 >Supplementary materials</h2>
+	<ul>
+		<li><a href="https://docs.google.com/spreadsheets/d/14KC8lHOe0S-ue4UAJ7uWfjGmhmcPYsxALOX3myee_rU/">集計データ</a>
+		</li>
+	</ul>
+	<h2 >宣伝</h2>
+	<p>ミリシタ、アイマス関係のツールや分析をいろいろやってますので、よろしければ見ていってください。</p>
+	<div class="fig"><a href="https://tankarup.github.io/tsunagaru/tsunagaru.html"><img src="2020-11-23-07-36-04.png" alt=""><br><caption>tankarup.github.io</caption></a></div>
+
+</body>
+
+</html>
