@@ -107,14 +107,22 @@ function min(arr){
     return m;
 }
 
+let opened_file;
+
 function open_file(){
-    const inputfile = document.getElementById('inputfile').files[0];
+    const temp_input = document.getElementById('inputfile').files[0];
     const encoding = document.getElementById('encoding').value;
-    //同じファイルを開き直してもchangeイベントが発生しない。なのでリセットしておく。
-    document.getElementById("inputfile").value = '';
+    console.log(typeof(temp_input));
+    if (typeof(temp_input) == 'object') opened_file = temp_input;
+    console.log(opened_file, encoding);
+
+
+    
+
     const reader = new FileReader();
-    reader.readAsText(inputfile, encoding);
+
     reader.onload = function() {
+        
         const lines = reader.result.split("\n");
         let datasets = [];
         let x_label = '';
@@ -217,9 +225,15 @@ function open_file(){
         chart.options.scales.yAxes[0].ticks.suggestedMax = ymax ? ymax : max(ys) + (max(ys) - min(ys))*0.1;
         
         chart.update();
-        //console.log(chart.data.datasets);
+        //console.log(chart.data.datasets);[]
+
+        //同じファイルを開き直してもchangeイベントが発生しない。なのでリセットしておく。
+        document.getElementById("inputfile").value = '';
 
     };
+    reader.readAsText(opened_file, encoding);
+
+    
 }
 
 const inputfile = document.getElementById('inputfile');
