@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>身の回りに潜むアイマス</title>
+	<style type="text/css">
+		body {
+
+			max-width: 90%;
+			margin: auto;
+		}
+
+
+		pre {
+			background-color: #eee;
+		}
+
+
+
+		.author {}
+
+		table {
+			border-collapse: collapse;
+			margin: auto;
+		}
+
+		thead tr {
+			border-bottom: 2px solid gray;
+		}
+
+		th,
+		td {
+			padding: 0px 10px;
+			text-align: center;
+			font-size: small;
+		}
+
+		.fig {
+			text-align: center;
+		}
+
+		p {
+			text-indent: 1em;
+		}
+
+		header,
+		footer {
+			position: fixed;
+			padding: 5px;
+			width: 100%;
+			height: 1.5em;
+			background-color: white;
+			font-size: small;
+
+		}
+
+		header {
+			top: 0px;
+			border-bottom: 1px solid gray;
+
+		}
+
+		footer {
+			bottom: 0px;
+			border-top: 1px solid gray;
+		}
+
+		img {
+			max-width: 100%;
+		}
+
+		h1,
+		h2,
+		h3 {
+			margin-top: 1em;
+			font-family: sans-serif;
+
+		}
+
+		h1 {
+			text-align: center;
+			font-size: 2em;
+		}
+
+		h2 {
+			margin-left: 0em;
+			font-size: 1.5em;
+			border-bottom: solid;
+		}
+
+		h3 {
+			margin-left: 1em;
+			font-size: 1.2em;
+			border-bottom-style: solid;
+			border-bottom-width: 1px;
+		}
+
+		.caption {
+			font-weight: bold;
+			display: block;
+		}
+
+		strong {
+			color: red;
+			font-size: x-large;
+			font-style: italic;
+		}
+
+
+		.twitter-tweet {
+			//float: left;
+			background-color: white;
+			max-width: 400px !important;
+			//display: table-cell;
+			margin-top: 0px;
+		}
+	</style>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+		integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://tankarup.github.io/million.css">
+</head>
+
+<body>
+
+	<h1>身の回りに潜むアイマス</h1>
+	<p class="author">by <a href="https://twitter.com/tankaru">Na2CO3 P</a></p>
+	<p>この記事は<a href="https://adventar.org/calendars/4976">アイドルマスター Advent Calendar 2020</a>の記事です。</p>
+	<h2>はじめに</h2>
+	<p>12月5日に<a href="https://imas.connpass.com/event/194308/">アイマスハッカソン2020
+			ONLINE！</a>が開催されました。残念ながら私は所用で参加できませんでしたが、<a
+			href="https://www.youtube.com/watch?v=KI9bEGOXV9Q">プレゼン動画</a>や<a
+			href="https://imas.connpass.com/event/194308/presentation/">発表資料</a>を見て勉強させて頂きました。</p>
+	<p>その中で私が影響を受けた発表の一つが、<a href="https://katawo.hatenablog.com/entry/2020/12/06/084800">片岡さんの「韻」</a>です。歌詞の中に埋め込まれているライムを技術の力で可視化した発表には『やられた！』と思いました。私のアイマス開発テーマのひとつが「可視化」なのですが、言葉からの可視化は私にとって新しい視点だったので、何か作ってみたくなりました。
+	</p>
+	<p>で、片岡さんの発表をうけてcroMisaPさんが、</p>
+	<blockquote class="twitter-tweet">
+		<p lang="ja" dir="ltr">「アイマスハッカソン2020ONLINE」に参加してきた。 - 片岡空の上の空 <a
+				href="https://t.co/89hC5VPK2f">https://t.co/89hC5VPK2f</a><br>気付かないだけで世界は韻に溢れてそうってくらいアイマス韻の例がある</p>
+		&mdash; croMisaP (@croMisa) <a
+			href="https://twitter.com/croMisa/status/1335936499162914816?ref_src=twsrc%5Etfw">December 7, 2020</a>
+	</blockquote>
+	<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+	<p>と感想を述べたのを見て、『これだ！』と思いました。普通の文章のなかにもアイマスは潜んでいるはずなんです。それを探し出すツールを作ってみることにしました。</p>
+	<h2>言葉の中にアイマス</h2>
+	<div class="fig"><span class="caption"><a href="https://tankarup.github.io/rhyme-with-idol/rhyme.html">世界のアイマス韻(β)</span><img src="2020-12-19-10-16-49.png" alt=""></a></div>
+
+	<p>作ってみました。</p>
+	<p>入力した文章の中から、アイマス関連用語と韻を踏む箇所を探し出します。検索対象に曲名や声優名を入れたり、最少文字数を小さくしたりすると表示がカオスになるかもしれません。お遊びですが韻の長さや数に応じたスコアも出します。</p>
+	<p>ふつうの文章の中にかなりのアイマスが潜んでいることを可視化することができました。片岡さんのいう「ステルス韻」が多いようですね。</p>
+	<p>技術的な解説は不要かと思いますが、こんな流れです。</p>
+	<ol>
+		<li>入力された文章をgooラボ「ひらがな化API」でひらがな文に変換</li>
+		<li>ひらがな文字列を母音文字列に変換</li>
+		<li>アイマス用語リストの母音文字列と、元文章の母音文字列と比較。力技で、元文章の頭から一文字ずつ順にマッチするか調べる</li>
+		<li>ヒットしたアイマス用語を文章に挿入</li>
+		<li>ヒット数とヒットしたアイマス用語文字列の長さに応じて適当にスコアを計算</li>
+	</ol>
+	<p>韻については片岡さんの発表を見て頂ければと思います。なおアイマス用語はmaruamyuさん作成の<a href="https://ime.imas-db.jp/">THE IDOLM@STER
+			IMEユーザー辞書登録用テキスト</a>、ふじわらはじめさん作成の<a
+			href="https://fujiwarahaji.me/ime">アイマス楽曲変換用IME辞書</a>を使用させていただきました。ありがとうございます。目的外使用かと思いますがご了承ください。</p>
+	<p>逆に技術的にわからないところはたくさんあります。漢字かな変換APIを使うためにアプリケーションIDを渡しているのですが、javascript内で使っているのでIDが丸見えです。どうやって隠したらいいんでしょう…？</p>
+
+	<h2>部屋の中にアイマス</h2>
+	<p>身の回りの言葉の中に潜むアイマスを見つけ出すツールを作りましたが、こちらは、身の回りの部屋の中に潜むアイドルを見つけ出すスマホ用ツールです。</p>
+	<div class="fig"><span class="caption"><a href="https://tankarup.github.io/Idol-Camera/">アイドル判定カメラ(α)</span><img
+			src="2020-12-17-20-10-19.png" alt="" style="max-height: 500px;"></a></div>
+	<p>(画像：アイドルマスターミリオンライブシアターデイズ)</p>
+	<p>スマホのカメラで部屋の中を撮影して、画像に隠れたミリシタアイドルを見つけ出します。ジョークソフトです。ジョークソフトなので解説するのも野暮ですね。</p>
+	<p>実のところ、こちらは少し前に作ったものであり、今回の記事向けに作ったものではありません。コンセプトが共通していたのでせっかくなのでここに載せることにしました。</p>
+	<p>ふつうの言葉の中にも、身の回りの部屋の中にも、いろんなところにアイマスは潜んでいることが分かりました。そのほかにもいろんなものにアイマスは潜んでいるんだと思います。音に潜むアイマスとか探し出してみたいですね…</p>
+	<h2>参考文献</h2>
+	<p>[1] 片岡空の上の空, 「アイマスハッカソン2020ONLINE」に参加してきた。, 2020</p>
+
+</body>
+
+</html>
