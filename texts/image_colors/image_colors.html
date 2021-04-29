@@ -2,307 +2,34 @@
 <html>
 
 <head>
-	<title>イメージカラーを分析したらエモかった</title>
+	<title>イメージカラーを分析したらエモかった(2)</title>
 	<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
 		integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
-	<style>
-		body {
-
-			max-width: 90%;
-			margin: auto;
-		}
-
-
-		pre {
-			background-color: #eee;
-		}
-
-
-
-		.author {}
-
-		table {
-			border-collapse: collapse;
-			margin: auto;
-		}
-
-		thead tr {
-			border-bottom: 2px solid gray;
-		}
-
-		th,
-		td {
-			padding: 0px 10px;
-			text-align: center;
-			font-size: small;
-		}
-
-		.fig {
-			text-align: center;
-		}
-
-		p {
-			text-indent: 1em;
-		}
-
-		header,
-		footer {
-			position: fixed;
-			padding: 5px;
-			width: 100%;
-			height: 1.5em;
-			background-color: white;
-			font-size: small;
-
-		}
-
-		header {
-			top: 0px;
-			border-bottom: 1px solid gray;
-
-		}
-
-		footer {
-			bottom: 0px;
-			border-top: 1px solid gray;
-		}
-
-		img {
-			max-width: 100%;
-		}
-
-		h1,
-		h2,
-		h3 {
-			margin-top: 1em;
-			font-family: sans-serif;
-
-		}
-
-		h1 {
-			text-align: center;
-			font-size: 2em;
-		}
-
-		h2 {
-			margin-left: 0em;
-			font-size: 1.5em;
-			border-bottom: solid;
-		}
-
-		h3 {
-			margin-left: 1em;
-			font-size: 1.2em;
-			border-bottom-style: solid;
-			border-bottom-width: 1px;
-		}
-
-		caption {
-			font-weight: bold;
-		}
-
-		strong {
-			color: red;
-			font-size: x-large;
-			font-style: italic;
-		}
-
-
-		.twitter-tweet {
-			//float: left;
-			background-color: white;
-			max-width: 400px!important;
-			//display: table-cell;
-			margin-top: 0px;
-		}
-		.twitter {
-			display: flex;
-			//display: table;
-			//max-height: 400px;
-		}
-		.svgraph {
-			//min-width: 200px;
-			//min-height: 200px;
-			//max-height: 50%;
-			//max-width: 50%;
-			
-		}
-		.cell {
-			display: table-cell;
-			vertical-align: middle;
-			padding: 10px;
-			
-		}
-		.sv td{
-			
-			font-size: medium;
-			text-align: left;
-		}
-		.sv {
-			//float:left;
-		}
-	</style>
+	<link rel="stylesheet" href="main.css">
 
 
 </head>
 
 <body>
-	<h1>イメージカラーを分析したらエモかった</h1>
+	<h1>琴葉と星梨花の秘密の関係</h1>
 	<p class="author">by <a href="https://twitter.com/tankaru">Na2CO3 P</a></p>
 	<p>この記事は<a href="https://adventar.org/calendars/4976">アイドルマスター Advent Calendar 2020</a>の記事です。</p>
 
-	<h2>始めに</h2>
-	<p>今年の5月にTwitterでイラスト作品での色の選び方を あいうち さんが解説したツイートを拝見しました。</p>
-	<div class="twitter">
-		<blockquote class="twitter-tweet">
-			<p lang="ja" dir="ltr">
-				【プロイラストレーターが多用する明度彩度の領域】<br><br>複数人のプロイラストレーターの作品で、明度彩度だけサンプリングした結果、見えてきた明度彩度の傾向となぜその領域が使用されるかの分析をしてみた。 <a
-					href="https://t.co/mnJ4QY0cKY">pic.twitter.com/mnJ4QY0cKY</a></p>&mdash; あいうち＠お絵かき侍 (@Aiuti01) <a
-				href="https://twitter.com/Aiuti01/status/1262996636524920832?ref_src=twsrc%5Etfw">May 20, 2020</a>
-		</blockquote>
-		<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-		<blockquote class="twitter-tweet" data-conversation="none">
-			<p lang="ja" dir="ltr">
-				さらに付け加えますと、ほどんどのプロイラストレーターの絵ではこの領域の明度彩度は徹底的に避けられていました。<br><br>最近流行りの「色鮮やかな絵」を塗る為にはこの領域の色は明度彩度が暗すぎたり濁りすぎたりするのでしょう。<br><br>この領域を選ばないだけでも色の選択は随分楽になると思います。
-				<a href="https://t.co/MtCHX4Ul1Q">pic.twitter.com/MtCHX4Ul1Q</a></p>&mdash; あいうち＠お絵かき侍 (@Aiuti01) <a
-				href="https://twitter.com/Aiuti01/status/1262997796556161024?ref_src=twsrc%5Etfw">May 20, 2020</a>
-		</blockquote>
-		<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-	</div>
-	<div style="clear:both;"></div>
-	<p>私は絵を描かない(描けない)人なので、「色」といえばH(色相)で見てしまいます。それを、色をS(彩度)とV(明度)の視点で見るというのが非常に新鮮に映りました。</p>
-	<p>で、アイマスといえばイメージカラーです。イメージカラーの分布を同じように見れば、色の選び方がイラストとはどのように違うのか、さらにはイメージカラーを選ぶルールが見えてくるのではないかと考え、分析してみました。</p>
-
-	<h2>アイマスにおけるイメージカラー</h2>
-	<p>今回の分析では、「イメージカラー」として<a href="https://sparql.crssnky.xyz/imas/">im@sparql</a>のデータを使用しました。なおim@sparqlに登録されている「イメージカラー」の数値は有志が様々なデータソースを参考に作成されたものです。公式がイメージカラーの数値を指定しているわけではありません(ないと思います)。コンテンツ内でアイドルのイメージカラーに具体的に言及しているのって、Colorful	days[1]くらいしか知らないんですよね…(インタビュー記事では時々言及されていますが)</p>
-	<p>各シリーズでのイメージカラーは、次のようなデータソースから作成されています。多分。</p>
-	<ul>
-		<li>765AS: ゲーム内のアイコンなどで使用されている色</li>
-		<li>シンデレラ: 公式ペンライトの色 (公式ペンライトが発売されていないアイドルのイメージカラーはまだ明らかになっていません)</li>
-		<li>ミリオン: ゲーム内のアイコンなどで使用されている色</li>
-		<li>SideM: 公式ペンライトの色</li>
-		<li>シャイニーカラーズ: 公式ホームページのアイコンなどで使用されている色</li>
-	</ul>
-	<p>※認識が間違っているかもしれません。誤認があれば指摘ください。</p>
-	<p>つまり何が言いたいかというと、イメージカラーは確定してるわけじゃないから、頓珍漢なこと言ってるかもしれないよ、という予防線です。</p>
-
-	<h2>あいうちモデル</h2>
-	<p>ではあいうちさんが作成したグラフと同じように、アイマスのイメージカラーをS(彩度)とV(明度)でプロットしてみます。グラフの作成には<a
-			href="https://www.chartjs.org/">chart.js</a>を使い、CSVファイルを読み込んでイメージカラーでプロットできる<a
-			href="https://tankarup.github.io/MillionLive-analysis/scatter.html">自作ツール</a>を使用しました。</p>
-
-			<p>カラフルなグラフっていいですよね。</p>
-			<p>で、プロットしてみたのはいいものの、残念ながらあまり分析につながりませんでした。</p>
-			<div class="container">
-				<div class="row">
-					<div class="col-sm-6">
-						<h3>765AS</h3>
-						<img src="2020-12-05-08-27-48.png" alt="765AS SV" class="svgraph img-fluid">
-						<p>アクセントカラーゾーンからバランスよく選ばれており、それに＋白＋黒＋ピンクという感じで色がピックアップされています。あいうちモデルに合致しているように見えます。美希の色はXBOXグリーンが由来のはずですが、ちゃんとばらけて配置されています。色が被らないようにちゃんと設計されているように見えます。</p>
-						<p>色を先に決めて、各キャラクターに割り振ってデザインに反映したかんじでしょうか？</p>
-					</div>
-					<div class="col-sm-6">
-						<h3>シンデレラ</h3>
-						<img src="2020-12-05-08-31-09.png" alt="シンデレラSV" class="svgraph">
-						<p>右上三角のゾーンに集中して配置されています。あいうちモデルでは使わないほうがよいとされている右下のゾーンにも多くのアイドルが配置されており、あいうちモデルには合致していないように見えます。ちょっと興味深いのは、明度Vがカンストしたアイドルがいないこと。彩度Sがカンストしたアイドルは何人かいるんですが。何ででしょうね？分かりません。
-						</p>
-						<p>キャラクターデザインがあって、そこからイメージカラーを選んだのかな？シンデレラはキャラが順次追加されていったので、イメージカラーをシリーズ全体で決めるのは難しいと思います。デザイナーも複数いるでしょうし。</p>
-					</div>
-					<div class="col-sm-6">
-						<h3>ミリオン</h3>
-						<img src="2020-12-05-08-29-45.png" alt="ミリオンSV" class="svgraph">
-						<p>あいうちモデルで使わないほうがよいとされている領域をきっちり避けた上でバランスよく分布しています。しかも765ASを補完するような分布です。AS組とシアター組の関係を象徴しているようにも感じられました。</p>
-						<p>ミリオンは歌織さんと紬を除いて一度にデザインされたのでしょうから、イメージカラーも全体のバランスを見て配置されている感じがします。</p>
-					</div>
-					<div class="col-sm-6">
-						<h3>SideM</h3>
-						<img src="2020-12-05-08-34-19.png" alt="SideM SV" class="svgraph">
-						<p>シンデレラガールズの分布よりもさらに右上のゾーンに集中しています。しかも彩度S、明度Vともにほぼカンストしているアイドルもいます。強い。男性向けと女性向けで色の選び方も違うのかもしれません。</p>
-						<p>SideMもシンデレラと同じように順次追加されたキャラクターデザインをもとにイメージカラーが追加されたのでしょうかね？</p>
-					</div>
-					<div class="col-sm-6">
-						<h3>シャイニーカラーズ</h3>
-						<img src="2020-12-05-08-32-37.png" alt="シャニマスSV" class="svgraph">
-						<p>全般的に明度Vが高い。明度Vや彩度Sがカンストしている人もけっこういる。しかも愛依はSとVがどちらもカンストしている。かなり強い色の選び方をしているようです。</p>
-						<p><img src="2020-12-06-21-27-06.png" alt="シャニマスHS" style="float:left; height: 300px;">シャイニーカラーズでのイメージカラーの選び方はかなり特徴的です。キャラクターデザインとは全く独立し、何等かの裏ルールでイメージカラーを選んだのではないかと思われます。色相Hの値が、あさひ=0(RGBのR),	透=180(CMYのC), 愛依=300(CMYのM)だったりして結構恣意的な感じです。どんなルールなのかは分かりませんが…</p>
-					</div>
-
-
-				</div>
-			</div>
-
-		
-	<p>いまいちよく分かりませんでした。</p>
-
-	<h2>色の由来は？</h2>
-	<p>あいうちモデルではSとVに着目しました。せっかくなので色相Hも見てみます。シリーズごとに色相Hでプロットしました。</p>
-	<p><img src="2020-12-05-09-25-57.png" alt=""></p>
-	<p>これを見ると、色相H=120~150の範囲がどのシリーズでもごっそり抜けていることが分かります。霧子しかいません。</p>
-	<p><img src="2020-12-05-09-33-53.png" alt="H=130"></p>
-	<p>H=130の色はこんな感じの黄緑色です。なぜこのあたりの色は使われていないのでしょうか？</p>
-	<p>Twitterでつぶやいたところ、紅木 弘さんからコメントを頂きました。</p>
-
-	<div class="twitter">
-		<blockquote class="twitter-tweet">
-			<p lang="ja" dir="ltr"><a
-					href="https://twitter.com/hashtag/%E3%82%A2%E3%82%A4%E3%83%9E%E3%82%B9%E7%B5%B1%E8%A8%88?src=hash&amp;ref_src=twsrc%5Etfw">#アイマス統計</a><br><br>765ASとミリオンのアイドルたちのイメージカラーと髪色の色相に関する相関図です。<br><br>同図より，イメージカラーと髪色には同じような色を用いるという因果関係が見て取れます。<br><br>なお，実際は彩度と明度の関係で黒や白っぽい色になることもあります。<a
-					href="https://t.co/qLYwNsAuli">https://t.co/qLYwNsAuli</a> <a
-					href="https://t.co/lG9QjK2wi6">pic.twitter.com/lG9QjK2wi6</a></p>&mdash; 紅木 弘@統計屋(自称)
-			(@hiroshiakagi398)
-			<a href="https://twitter.com/hiroshiakagi398/status/1328291724423294977?ref_src=twsrc%5Etfw">November 16,
-				2020</a>
-		</blockquote>
-		<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-		<blockquote class="twitter-tweet" data-conversation="none">
-			<p lang="ja" dir="ltr"><a
-					href="https://twitter.com/hashtag/%E3%82%A2%E3%82%A4%E3%83%9E%E3%82%B9%E7%B5%B1%E8%A8%88?src=hash&amp;ref_src=twsrc%5Etfw">#アイマス統計</a><br><br>緑がイメージカラーのアイドルは複数人いますが，緑髪のアイドルは島原エレナと徳川まつり，永吉昴くらいです。<br><br>さらに，765AS・ミリオンの髪色の割合を見てみると，緑は他の色に比べ少ない。<br><br>つまり，緑はイメージカラーと髪の色の因果関係が低いと考察されます。
-				<a href="https://t.co/jKgcyK8v0r">pic.twitter.com/jKgcyK8v0r</a></p>&mdash; 紅木 弘@統計屋(自称) (@hiroshiakagi398)
-			<a href="https://twitter.com/hiroshiakagi398/status/1328293444872073217?ref_src=twsrc%5Etfw">November 16,
-				2020</a>
-		</blockquote>
-		<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-		<blockquote class="twitter-tweet" data-conversation="none">
-			<p lang="ja" dir="ltr"><a
-					href="https://twitter.com/hashtag/%E3%82%A2%E3%82%A4%E3%83%9E%E3%82%B9%E7%B5%B1%E8%A8%88?src=hash&amp;ref_src=twsrc%5Etfw">#アイマス統計</a><br><br>すなわち，下記TLにてイメージカラーに緑色が少ないのは，緑髪のアイドルが少ないことに起因しています。<a
-					href="https://t.co/qLYwNsiSWI">https://t.co/qLYwNsiSWI</a></p>&mdash; 紅木 弘@統計屋(自称) (@hiroshiakagi398)
-			<a href="https://twitter.com/hiroshiakagi398/status/1328293830072832002?ref_src=twsrc%5Etfw">November 16,
-				2020</a>
-		</blockquote>
-		<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-		<blockquote class="twitter-tweet" data-conversation="none">
-			<p lang="ja" dir="ltr"><a
-					href="https://twitter.com/hashtag/%E3%82%A2%E3%82%A4%E3%83%9E%E3%82%B9%E7%B5%B1%E8%A8%88?src=hash&amp;ref_src=twsrc%5Etfw">#アイマス統計</a><br><br>では，なぜ緑髪が少ないのか。<br><br>これについてはつばめ様(
-				<a href="https://twitter.com/kinako003?ref_src=twsrc%5Etfw">@kinako003</a> )や牧田翠様( <a
-					href="https://twitter.com/MiDrill?ref_src=twsrc%5Etfw">@MiDrill</a>
-				)が過去にエロゲのヒロインで調査したときもそうであったが，緑髪のヒロインは少ない傾向にある。<br><br>つまり，緑髪が少ないのはアイマスだけのことではない。<a
-					href="https://t.co/EhtPFkFbfE">https://t.co/EhtPFkFbfE</a></p>&mdash; 紅木 弘@統計屋(自称) (@hiroshiakagi398)
-			<a href="https://twitter.com/hiroshiakagi398/status/1328294806955520000?ref_src=twsrc%5Etfw">November 16,
-				2020</a>
-		</blockquote>
-		<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-		<blockquote class="twitter-tweet" data-conversation="none">
-			<p lang="ja" dir="ltr">「緑はいらない子」などと言われることもあるように，業界的にも緑髪のヒロインはつくりにくい風潮があるのかもしれない。<a
-					href="https://t.co/GjTSIhJPgp">https://t.co/GjTSIhJPgp</a></p>&mdash; 紅木 弘@統計屋(自称) (@hiroshiakagi398)
-			<a href="https://twitter.com/hiroshiakagi398/status/1328295301073960963?ref_src=twsrc%5Etfw">November 16,
-				2020</a>
-		</blockquote>
-		<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-	</div>
-	<div style="clear:both;"></div>
-	<p>一般的な傾向として緑髪が敬遠されていることが遠因みたいですね。</p>
-	<p>紅木さんのツイートの中で、ミリオンライブのアイドルはイメージカラーは髪の色と相関があるものの、ずれているアイドルも多いことが指摘されていました。</p>
-	<p>ということで、ミリオンを対象にして、キャラクターのどの部分の色がイメージカラーに使われているのか調べました。</p>
+	<p>前回：<a href="image_colors_map.html">アイマスシリーズのイメージカラー分布を分析する</a></p>
+	<h2>ミリオンライブのキャラクターイメージカラーの由来</h2>
+	<p>前回の分析では、アイマス各シリーズのイメージカラー分布を分析しました。いまいち傾向はよく分かりませんでしたが。</p>
+	<p>今回は、ミリオンライブに特化して分析してみます。キャラクターのどの部分の色がイメージカラーに使われているのか調べました。</p>
 	<p>イメージカラーと100%一致する色だけを抽出するのは条件が厳しすぎるので、多少色が違っていてもOKということにしました。具体的には、<a
 			href="http://www.colorwiki.com/wiki/Delta_E:_The_Color_Difference#CMC_l:c">CMC
 			l:c</a>という基準を用い、キャラクターデザインに使われている色とイメージカラーの距離が15未満であれば一致しているということにしました。計算には<a
-			href="https://gka.github.io/chroma.js/">chroma.js</a>ライブラリの<code>chroma.deltaE</code>関数を使いました。例えば<code>chroma.deltaE('red', 'blue')</code>とやるだけで赤と青がどれくらい離れているのか距離を簡単に計算することができます。超便利。</p>
-	<p>イメージカラーと比較するキャラクター画像はなるべく初期のものがよいと考えられるので、ミリオンライブの標準立ち絵を使いました。ただし紬と歌織さんはミリシタの立ち絵を使いました。</p>
-	<p>結果を次の図に示します。立ち絵と、イメージカラーが使われているエリアを赤で塗った絵を並べました。</p>
+			href="https://gka.github.io/chroma.js/">chroma.js</a>ライブラリの<code>chroma.deltaE</code>関数を使いました。例えば<code>chroma.deltaE('red', 'blue')</code>と計算すると赤と青がどれくらい離れているのか距離を簡単に算出できます。超便利。</p>
+	<p>イメージカラーと比較するキャラクター画像はなるべく初期のものがよいと考えられるので、ミリオンライブ(グリマス)の標準立ち絵を使いました。ただし紬と歌織さんはミリシタの立ち絵を使いました。</p>
+	<p>結果を次の図に示します。立ち絵と、イメージカラーが使われているエリアを赤で塗った絵を並べています。</p>
 	<p><img src="2020-12-05-09-51-01.png" alt="">
 		<img src="2020-12-05-09-51-49.png" alt=""></p>
-	<p>キャラクターデザインのどの部分にイメージカラーが使われていたのか表にまとめました。</p>
+	<p>赤く塗られた部分を目視で確認し、キャラクターデザインのどの部分にイメージカラーが使われていたのか表にまとめました。</p>
 	<table>
 		<thead>
 			<tr>
@@ -597,18 +324,18 @@
 	<p>髪由来と服由来が半々くらいという結果になりました。</p>
 	<p>イメージカラーとキャラクターデザインが一致したグループについては特に言うことはないです。一致度が低かったグループを見てみましょう。</p>
 
-	<h3>似たような色が使われているが、それほど一致していないグループ</h3>
+	<h3>似たような色が使われているが、それほど一致していないアイドル</h3>
 	<p>このグループは、パッと見ではイメージカラーと一致しているように見えますが、計算してみるとそうでもありませんでした。</p>
 	<ul>
-		<li>海美</li>
-		<li>志保</li>
-		<li>昴</li>
-		<li>麗花</li>
-		<li>歌織</li>
+		<li>海美(服)</li>
+		<li>志保(服、髪、瞳)</li>
+		<li>昴(髪)</li>
+		<li>麗花(髪)</li>
+		<li>歌織(服)</li>
 	</ul>
-	<p>キャラクターデザインが完成→イメージカラーを決定→キャラクターデザイン最終稿で色バランスが変更された、って経緯をたどったりしたのでしょうか？あくまでも想像でしかありませんが。</p>
+	<p>キャラクターデザインの初期案を作成→イメージカラーを決定→キャラクターデザイン最終稿で色バランスを変更、って経緯をたどったりしたのでしょうか？あくまでも想像でしかありませんが。</p>
 
-	<h3>イメージカラーとキャラクターデザインが全く違うグループ</h3>
+	<h3>イメージカラーとキャラクターデザインが全く違うアイドル</h3>
 	<ul>
 		<li>琴葉</li>
 		<li>星梨花</li>
@@ -618,25 +345,23 @@
 	<p>とうか、琴葉のイメージカラーと星梨花のイメージカラーが逆になってませんか？</p>
 	<p>では琴葉と星梨花のイメージカラーを入れ替えてもう一度計算します。</p>
 	<p><img src="2020-12-06-22-29-45.png" alt=""></p>
-	<p>なんとっ！？互いのイメージカラーにぴったり一致してしまいました。</p>
+	<p>なんとっ！？互いのイメージカラーにぴったり一致してしまいました。星梨花は琴葉のイメージカラーを身に着け、琴葉は星梨花のイメージカラーを身に着けていたんです！</p>
 	<p>服を交換したのでしょうか？色を交換したのでしょうか？</p>
 	<p>かなりエモい。<strong>相手の色を纏うんですよ！？ 「色」を交換するんですよ！？ "Tint me, tint you." の関係ってことですよ！？</strong></p>
 	<p>ちょっとこの事実を知ったとき、この二人の関係が今までと全く違って見えるようになってしまいました。知ってしまった以上もう元には戻れない…</p>
-	<p>(※私はミリオンを始めてまだ1年ほどで、Gree時代の知識が絶対的に不足しています。もし琴葉と星梨花のイメージカラーに関する情報をどなたかご存知でしたらぜひ教えていただけますようお願いします。m(__)m)</p>
+	<p>(※私はグリマスをやったことがないので、当時の知識が絶対的に不足しています。もし琴葉と星梨花のイメージカラーに関する情報をどなたかご存知でしたらぜひ教えていただけますようお願いします。m(__)m)</p>
 
-	<h2>参考文献</h2>
-	<p>[1] 中村恵(作詞), Colorful Days, 2008</p>
-	<p>[2] あいうち＠お絵かき侍 (@Aiuti01) , Twitter, 2020</p>
-	<p>[3] 紅木 弘@統計屋(自称) (@hiroshiakagi398), Twitter, 2020</p>
+	<h2>まとめ</h2>
+	<ul>
+		<li>イメージカラーは髪や服に使われているケースが多い。</li>
+		<li>琴葉と星梨花の色が入れ替わっている。二人の怪しい関係が示唆される。</li>
+	</ul>
+
 	
 	<h2>その他</h2>
 	<ul>
 		<li>アイドルマスターミリオンライブはバンダイナムコエンターテインメントが所有するコンテンツです。本ページではアイドルマスターミリオンライブの画像を使用していますが、イメージカラーについて評論するにあたり必要であるため、引用の条件を満たしたうえで使用しました。</li>
 	</ul>
-	<h2>宣伝</h2>
-	<p>ミリシタ、アイマス関係のツールや分析をいろいろやってますので、よろしければ見ていってください。</p>
-	<div class="fig"><a href="https://tankarup.github.io/tsunagaru/tsunagaru.html"><img src="2020-11-23-07-36-04.png" alt=""><br><caption>tankarup.github.io</caption></a></div>
-
 
 </body>
 
