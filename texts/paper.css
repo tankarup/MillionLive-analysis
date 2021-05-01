@@ -96,3 +96,7 @@ h2::before {
   counter-increment: sub-chapter;
   content: counter(chapter) "-" counter(sub-chapter) ". ";
 }
+
+.reference_list {
+    list-style: none;
+}
