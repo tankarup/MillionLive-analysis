@@ -33,7 +33,7 @@ td {
     padding: 5px 10px;
 }
 
-.fig {
+.fig, .table{
     text-align: center;
     margin: 1em;
 }
