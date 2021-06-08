@@ -1,0 +1,272 @@
+/*
+    article.js  -- a stylesheet to give html some LaTeX like outlook
+
+    Copyright (C) 2016 Kabipanotoko
+
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with this program.  If not, see <http://www.gnu.org/licenses/>.
+*/
+
+
+body {
+    font-size: middle;
+    margin: 2em;
+    background-color: white;
+}
+
+div.title {
+    margin: 7em 0 3em 0;
+}
+h1 {
+    font-family: Sans-serif;
+    font-weight: bold;
+    font-size: xx-large;
+    text-align: center;
+    margin: 0;
+    line-height: 1em;
+}
+h2 {
+    font-family: Sans-serif;
+    font-weight: bold;
+    font-size: x-large;
+    text-align: left;
+    margin: 3em 0 1em 0;
+    padding: 0;
+}
+h3 {
+    font-family: Sans-serif;
+    font-weight: bold;
+    font-size: 120%;
+    text-align: left;
+    margin: 2em 0em;
+    padding: 0;
+}
+
+h4 {
+    font-family: Sans-serif;
+    font-weight: normal;
+    font-size: large;
+    text-align: left;
+    margin: 2em 0em;
+    padding: 0;
+}
+
+
+
+p.subtitle {
+    font-size: large;
+    text-align: center;
+    margin: 0.7em 0 0 0;
+    line-height: 1em;
+}
+div.authors {
+    text-align: center;
+    margin: 0 0 2em 0;
+}
+div.authors div.author {
+    margin: 1em 0 0 0;
+}
+div.author p.name {
+    font-size: large;
+    line-height: 1em;
+    margin: 0;
+}
+div.author p.email {
+    font-size: middle;
+    line-height: 1em;
+    margin: 0.5em 0 0 0;
+}
+div.author+div.author {
+    margin: 2em 0 0 0;
+}
+div.abstract p {
+    line-height: 170%;
+    margin: 3em 10% 0 10%;
+}
+div.tableOfContents {
+    margin: 3em 0 0 0;
+}
+div.tableOfContents p{
+    margin: 0 0 0 2em;
+    font-size: large;
+    font-family: Sans-serif;
+    font-weight: normal;
+}
+ul.tableOfContents { font-family: Sans-serif; }
+ul.tableOfContents { margin: 0; }
+ul.tableOfContents li.H1 { margin: 2em 0 0 0em; }
+ul.tableOfContents li.H2 { margin: 1.5em 0 0 1em; }
+ul.tableOfContents li.H3 { margin: 0.5em 0 0 2em ; }
+ul.tableOfContents li.H4 { margin: 0 0 0 3em ; }
+
+p {
+    font-family: Sans-serif;
+    line-height: 170%;
+    margin: 0.7em 0;
+}
+p.date {
+    font-family: Sans-serif;
+    line-height: 170%;
+    margin: 1em 0 0 0;
+    text-align: center;
+}
+
+/* 注釈全体 */
+p.note {
+    display: block;
+    font-family: Sans-Serif;
+    font-size: 90%;
+    margin: 1em 0 0 5em;
+    text-indent: -1em;
+}
+p.note+p.note {
+    margin-top: 0em;
+}
+/* 注釈番号 */
+p.note span.noteNum {
+    font-family: Sans-Serif;
+    font-weight: normal;
+}
+/* 注釈本文 */
+p.note span.noteText {
+    text-indent: 1em;
+    margin-left: 1em;
+}
+/* 本文に埋め込まれる注釈参照番号 */
+span.noteNumRef {
+    font-size: 80%;
+    font-family: Sans-Serif;
+    font-weight: normal;
+    vertical-align: super;
+}
+
+/* 参考文献各項目 */
+ul.biblio li {
+    list-style-type: none;
+    margin: 0 0 0.5em 0;
+    font-family: Sans-Serif;
+}
+/* 本文中の参考文献参照番号（a 要素がテキストを持たない場合場合） */
+span.biblioNum {
+    font-family: Sans-Serif;
+    font-weight: normal;
+}
+/* 本文中の参考文献参照番号（a 要素がテキストを持つ場合） */
+span.biblioNum.aux {
+    font-family: Sans-Serif;
+    font-weight: normal;
+    vertical-align: super;
+    font-size: 80%;
+}
+
+
+/* 図番号、図参照番号（a 要素がテキストを持たない場合） */
+span.figureNum {
+    font-family: Sans-Serif;
+    font-weight: normal;
+}
+/* 図参照番号（a 要素がテキストを持つ場合） */
+span.figureNum.aux {
+    font-family: Sans-Serif;
+    font-weight: normal;
+}
+span.tableNum {
+    font-family: Sans-Serif;
+    font-weight: normal;
+}
+span.tableNum.aux {
+    font-family: Sans-Serif;
+    font-weight: normal;
+}
+
+figure img {
+    display: block;
+    margin: 1em auto;
+}
+figure figcaption {
+    text-align:center;
+    font-size: 90%;
+}
+table {
+    margin: 1.5em auto;
+    border-collapse: collapse;
+    font-size: 90%;
+}
+td, th {
+    border-style: solid;
+    border-width: 1px;
+    border-color: black;
+    padding: 0.2em 0.5em;
+}
+
+
+table caption {
+    margin-bottom: 0.5em;
+}
+
+@page {
+    size: auto;
+    margin: 25mm 25mm 25mm 25mm;  
+}
+
+@media print {
+	display:table-cell;
+	vertical-align:top;
+	float:none;
+	position:relative;
+    body {
+	font-size: 10pt;
+    }
+    p {
+	font-family: Serif;
+	font-weight: normal;
+    }
+    p.note {
+	font-family: Serif;
+    }
+    ul.biblio li {
+	font-family: Serif;
+    }
+    b {
+	font-family: Sans-serif;
+    }
+    table, figure {
+	page-break-inside: avoid;
+    }
+    div.noNewPage {
+	page-break-inside: avoid;
+    }
+    table th {
+	font-family: Sans-serif;
+	font-weight: normal;
+    }
+    h1, h2, h3, h4, h5, h6 {
+	page-break-after: avoid;
+    }
+    h2+h3 {
+	page-break-before: avoid;
+    }
+    h1 {
+	font-family: Sans-serif;
+	font-weight: bold;
+    }
+    h2, h3, h4, h5, h6 {
+	font-family: Sans-serif;
+	font-weight: normal;
+    }	
+    div.tableOfContents, div.tableOfContents * {
+	display: none
+    }
+    a:link { color: black; text-decoration: none; }
+    a:visited { color: black; text-decoration: none; }
+}

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../article.css"> 
+    <title>シアター内部構造</title>
+</head>
+<body>
+    <h1>765プロライブ劇場の内部構造</h1>
+		<h2>構造</h2>
+			<h3>部屋</h3>
+				<div id="rooms_table"></div>
+			<h3>ステージ</h3>
+		<h2>先行図書</h2>
+
+
+    <script src="../article.js"></script>
+<script>
+const data = `部屋名	部屋名ソース	室内画像	画像ソース	備考
+会議室	プラチナスターシアター リフレインキス 第2話	images/meeting.jpg	プラチナスターツアー  ～Special Wonderful Smile～　第1話	
+事務室	施設移動	images/office.jpg	ふれあい	
+ドレスアップルーム	施設移動	images/dressing.jpg	ふれあい	
+控え室	施設移動	images/waiting.jpg	メインコミュ　第5話 ある晴れた日の歌声、フェスコミュ  09　スタイリッシュにキメるわよ♪	
+エントランス	施設移動	images/entrance.jpg	ふれあい	
+グラビアスタジオ	施設移動	images/studio.jpg	グラビアスタジオ	
+レッスンルーム		images/lesson.jpg	SSR「<a href="https://idolmaster-official.jp/news/01_1588.html">初恋バタフライ　宮尾美也</a>」、メインコミュ  第5話 ある晴れた日の歌声、メインコミュ　第6話 そして少女達は立ち上がった	
+衣装部屋		images/closet.jpg	MILLION LIVE WORKING☆ 熱踏！アイドルカーニバル	
+給湯室		images/kitchen.jpg	メインコミュ　第4話 ふるえるこころ	
+資料室		images/library.jpg	プラチナスターシアター ～Persona Voice～ 第5話 	
+地下室		images/basement.jpg	プラチナスターツアー  ～Special Wonderful Smile～　第6話	
+
+`;
+let html = '';
+html += '<table id="rooms">';
+html += '<caption>部屋</caption>';
+const lines = data.split('\n');
+let table_head = true;
+for (let line of lines){
+	if (line.length < 1) continue;
+	const cell_tag = table_head ? 'th' : 'td';
+    html += '<tr>';
+    const items = line.split('\t');
+    for (let item of items){
+		if (item.slice(-4,-3) == '.'){
+			html += `<${cell_tag}><img src="${item}" height="150"></${cell_tag}>`;
+		} else {
+			html += `<${cell_tag}>${item}</${cell_tag}>`;
+		}
+        
+    }
+    html += '</tr>';
+	table_head = false;
+}
+html += '</table>';
+document.getElementById('rooms_table').innerHTML = html;
+</script>
+</body>
+</html>
