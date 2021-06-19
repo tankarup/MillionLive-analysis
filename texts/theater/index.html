@@ -13,48 +13,59 @@
 			<h3>部屋</h3>
 				<div id="rooms_table"></div>
 			<h3>ステージ</h3>
+				<div id="stage_table"></div>
 		<h2>先行図書</h2>
 
 
     <script src="../article.js"></script>
 <script>
-const data = `部屋名	部屋名ソース	室内画像	画像ソース	備考
-会議室	プラチナスターシアター リフレインキス 第2話	images/meeting.jpg	プラチナスターツアー  ～Special Wonderful Smile～　第1話	
-事務室	施設移動	images/office.jpg	ふれあい	
-ドレスアップルーム	施設移動	images/dressing.jpg	ふれあい	
-控え室	施設移動	images/waiting.jpg	メインコミュ　第5話 ある晴れた日の歌声、フェスコミュ  09　スタイリッシュにキメるわよ♪	
-エントランス	施設移動	images/entrance.jpg	ふれあい	
-グラビアスタジオ	施設移動	images/studio.jpg	グラビアスタジオ	
-レッスンルーム	MTW08 Return at Miraclesonic★ 3	images/lesson.jpg	SSR「<a href="https://idolmaster-official.jp/news/01_1588.html">初恋バタフライ　宮尾美也</a>」、メインコミュ  第5話 ある晴れた日の歌声、メインコミュ　第6話 そして少女達は立ち上がった	
-衣装部屋		images/closet.jpg	MILLION LIVE WORKING☆ 熱踏！アイドルカーニバル	
-給湯室		images/kitchen.jpg	メインコミュ　第4話 ふるえるこころ	
-資料室<img src="images/library_plate.jpg" height="100px">	メインコミュ  第65話 この、てのひらのなか	images/library.jpg	プラチナスターシアター ～Persona Voice～ 第5話、プラチナスターシアター リフレインキス 第4話	
-地下室		images/basement.jpg	プラチナスターツアー  ～Special Wonderful Smile～　第6話	
+const room_data = `部屋名	部屋名ソース	室内画像	画像ソース	備考
+会議室	プラチナスターシアター リフレインキス 第2話	meeting.jpg	プラチナスターツアー  ～Special Wonderful Smile～　第1話	
+事務室	施設移動	office.jpg	ふれあい	
+ドレスアップルーム	施設移動	dressing.jpg	ふれあい	
+控え室	施設移動	waiting.jpg	メインコミュ　第5話 ある晴れた日の歌声、フェスコミュ  09　スタイリッシュにキメるわよ♪	
+エントランス	施設移動	entrance.jpg	ふれあい	
+グラビアスタジオ	施設移動	studio.jpg	グラビアスタジオ	
+レッスンルーム	MTW08 Return at Miraclesonic★ 3	lesson.jpg	SSR「<a href="https://idolmaster-official.jp/news/01_1588.html">初恋バタフライ　宮尾美也</a>」、メインコミュ  第5話 ある晴れた日の歌声、メインコミュ　第6話 そして少女達は立ち上がった	
+衣装部屋		closet.jpg	MILLION LIVE WORKING☆ 熱踏！アイドルカーニバル	
+給湯室		kitchen.jpg	メインコミュ　第4話 ふるえるこころ	
+資料室<img src="images/library_plate.jpg" height="100px">	メインコミュ  第65話 この、てのひらのなか	library.jpg	プラチナスターシアター ～Persona Voice～ 第5話、プラチナスターシアター リフレインキス 第4話	
+地下室		basement.jpg	プラチナスターツアー  ～Special Wonderful Smile～　第6話	
 
 `;
-let html = '';
-html += '<table id="rooms">';
-html += '<caption>部屋</caption>';
-const lines = data.split('\n');
-let table_head = true;
-for (let line of lines){
-	if (line.length < 1) continue;
-	const cell_tag = table_head ? 'th' : 'td';
-    html += '<tr>';
-    const items = line.split('\t');
-    for (let item of items){
-		if (item.slice(-4,-3) == '.'){
-			html += `<${cell_tag}><img src="${item}" height="150"></${cell_tag}>`;
-		} else {
-			html += `<${cell_tag}>${item}</${cell_tag}>`;
+const stage_data = `客席画像	画像ソース
+stage-front.jpg	第1回 ～FairyTaleじゃいられない～ 第6話 妖精たちの飛翔！
+stage-back.jpg	エイプリルフールコミュ2019　スタンバイ！／死闘の果てに
+stage-right.jpg	第32回 ～Special Wonderful Smile～ 第5話 あなたは秘密とともに
+stage-left.jpg	第26回 ～待ちぼうけのLacrima～ 第6話 せつなさの理由
+`;
+function make_table(data, div_id, table_id, caption){
+	let html = '';
+	html += `<table id="${table_id}">`;
+	html += `<caption>${caption}</caption>`;
+	const lines = data.split('\n');
+	let table_head = true;
+	for (let line of lines){
+		if (line.length < 1) continue;
+		const cell_tag = table_head ? 'th' : 'td';
+		html += '<tr>';
+		const items = line.split('\t');
+		for (let item of items){
+			if (item.slice(-4,-3) == '.'){
+				html += `<${cell_tag}><img src="images/${item}" height="150"></${cell_tag}>`;
+			} else {
+				html += `<${cell_tag}>${item}</${cell_tag}>`;
+			}
+			
 		}
-        
-    }
-    html += '</tr>';
-	table_head = false;
+		html += '</tr>';
+		table_head = false;
+	}
+	html += '</table>';
+	document.getElementById(div_id).innerHTML = html;
 }
-html += '</table>';
-document.getElementById('rooms_table').innerHTML = html;
+make_table(room_data, 'rooms_table', 'rooms','部屋');
+make_table(stage_data, 'stage_table', 'stage','客席');
 </script>
 </body>
 </html>
