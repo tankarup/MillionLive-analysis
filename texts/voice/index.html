@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../article.css"> 
+    <title>ミリシタボイス波形データ</title>
+	<style>
+		img:hover {
+			transform: scale(2, 2);
+	}
+	</style>
+</head>
+<body>
+    <h1>ミリシタボイス波形データ</h1>
+		<h2>音声データ</h2>
+			<div id="voices"></div>
+
+		<h2>備考</h2>
+			<ul>
+				<li>ミリシタアプリで「アイドルマスター　ミリオンライブ シアターデイズ」のボイスの波形グラフとスペクトログラムを作成</li>
+				<li>スペクトログラムは0-5000Hzの範囲</li>
+				<li>音声解析ソフトPraatを使い、ピッチおよびフォルマントを算出</li>
+			</ul>
+
+
+    <script src="../article.js"></script>
+<script>
+const voices_data = `氏名	 CV 	波形	スペクトログラム	 ピッチ[Hz] 	F1[Hz]	F2[Hz]	F3[Hz]	F4[Hz]
+春日未来	 山崎はるか 	 graph/wave/mirai.jpg 	 graph/spectrogram/mirai.jpg 	 340 	911 	1997 	2955 	4044 
+最上静香	 田所あずさ 	 graph/wave/shizuka.jpg 	 graph/spectrogram/shizuka.jpg 	 362 	882 	2135 	3077 	3879 
+伊吹翼	 Machico 	 graph/wave/tsubasa.jpg 	 graph/spectrogram/tsubasa.jpg 	 346 	896 	2075 	2932 	4299 
+田中琴葉	 種田梨沙 	 graph/wave/kotoha.jpg 	 graph/spectrogram/kotoha.jpg 	 359 	887 	2138 	3054 	3977 
+島原エレナ	 角元明日香 	 graph/wave/elena.jpg 	 graph/spectrogram/elena.jpg 	 346 	1000 	2061 	3154 	4087 
+佐竹美奈子	 大関英里 	 graph/wave/minako.jpg 	 graph/spectrogram/minako.jpg 	 336 	1009 	2117 	3132 	4014 
+所恵美	 藤井ゆきよ 	 graph/wave/megumi.jpg 	 graph/spectrogram/megumi.jpg 	 341 	1016 	2118 	3154 	4132 
+徳川まつり	 諏訪彩花 	 graph/wave/matsuri.jpg 	 graph/spectrogram/matsuri.jpg 	 332 	1003 	2156 	3155 	4086 
+箱崎星梨花	 麻倉もも 	 graph/wave/serika.jpg 	 graph/spectrogram/serika.jpg 	 332 	1021 	2183 	3133 	4226 
+野々原茜	 小笠原早紀 	 graph/wave/akane.jpg 	 graph/spectrogram/akane.jpg 	 358 	1042 	2183 	3181 	4157 
+望月杏奈	 夏川椎菜 	 graph/wave/anna.jpg 	 graph/spectrogram/anna.jpg 	 347 	1005 	2206 	3047 	4286 
+ロコ	 中村温姫 	 graph/wave/roco.jpg 	 graph/spectrogram/roco.jpg 	 361 	1034 	2127 	3155 	4119 
+七尾百合子	 伊藤美来 	 graph/wave/yuriko.jpg 	 graph/spectrogram/yuriko.jpg 	 342 	920 	2229 	3205 	4001 
+高山紗代子	 駒形友梨 	 graph/wave/sayoko.jpg 	 graph/spectrogram/sayoko.jpg 	 328 	961 	2169 	3207 	4003 
+松田亜利沙	 村川梨衣 	 graph/wave/arisa.jpg 	 graph/spectrogram/arisa.jpg 	 352 	1075 	2117 	3221 	4184 
+高坂海美	 上田麗奈 	 graph/wave/umi.jpg 	 graph/spectrogram/umi.jpg 	 355 	1063 	2162 	3257 	3931 
+中谷育	 原嶋あかり 	 graph/wave/iku.jpg 	 graph/spectrogram/iku.jpg 	 338 	1099 	2064 	3039 	3998 
+天空橋朋花	 小岩井ことり 	 graph/wave/tomoka.jpg 	 graph/spectrogram/tomoka.jpg 	 326 	969 	2068 	3095 	4090 
+エミリー	 郁原ゆう 	 graph/wave/emily.jpg 	 graph/spectrogram/emily.jpg 	 340 	969 	2011 	3137 	4079 
+北沢志保	 雨宮天 	 graph/wave/shiho.jpg 	 graph/spectrogram/shiho.jpg 	 297 	830 	2212 	3327 	4270 
+舞浜歩	 戸田めぐみ 	 graph/wave/ayumu.jpg 	 graph/spectrogram/ayumu.jpg 	 310 	1004 	2115 	3321 	3971 
+木下ひなた	 田村奈央 	 graph/wave/hinata.jpg 	 graph/spectrogram/hinata.jpg 	 338 	853 	2329 	3083 	4207 
+矢吹可奈	 木戸衣吹 	 graph/wave/kana.jpg 	 graph/spectrogram/kana.jpg 	 326 	1052 	2169 	3182 	3991 
+横山奈緒	 渡部優衣 	 graph/wave/nao.jpg 	 graph/spectrogram/nao.jpg 	 332 	1065 	2061 	3018 	4126 
+二階堂千鶴	 野村香菜子 	 graph/wave/chizuru.jpg 	 graph/spectrogram/chizuru.jpg 	 326 	989 	2209 	3214 	3949 
+馬場このみ	 高橋未奈美 	 graph/wave/konomi.jpg 	 graph/spectrogram/konomi.jpg 	 331 	1060 	2120 	3244 	3999 
+大神環	 稲川英里 	 graph/wave/tamaki.jpg 	 graph/spectrogram/tamaki.jpg 	 345 	975 	2015 	3150 	4126 
+豊川風花	 末柄里恵 	 graph/wave/fuka.jpg 	 graph/spectrogram/fuka.jpg 	 328 	904 	2105 	3140 	3765 
+宮尾美也	 桐谷蝶々 	 graph/wave/miya.jpg 	 graph/spectrogram/miya.jpg 	 355 	958 	1896 	2917 	4107 
+福田のり子	 浜崎奈々 	 graph/wave/noriko.jpg 	 graph/spectrogram/noriko.jpg 	 336 	1021 	2173 	3281 	3935 
+真壁瑞希	 阿部里果 	 graph/wave/mizuki.jpg 	 graph/spectrogram/mizuki.jpg 	 397 	1025 	2078 	3130 	4122 
+篠宮可憐	 近藤唯 	 graph/wave/karen.jpg 	 graph/spectrogram/karen.jpg 	 324 	910 	1992 	2995 	3971 
+百瀬莉緒	 山口立花子 	 graph/wave/rio.jpg 	 graph/spectrogram/rio.jpg 	 362 	1005 	2172 	3376 	4044 
+永吉昴	 斉藤佑圭 	 graph/wave/subaru.jpg 	 graph/spectrogram/subaru.jpg 	 338 	985 	2213 	3160 	4093 
+北上麗花	 平山笑美 	 graph/wave/reika.jpg 	 graph/spectrogram/reika.jpg 	 334 	945 	2123 	3199 	3991 
+周防桃子	 渡部恵子 	 graph/wave/momoko.jpg 	 graph/spectrogram/momoko.jpg 	 359 	1024 	2235 	3283 	4077 
+ジュリア	 愛美 	 graph/wave/julia.jpg 	 graph/spectrogram/julia.jpg 	 328 	913 	2114 	3335 	3983 
+白石紬	 南早紀 	 graph/wave/tsumugi.jpg 	 graph/spectrogram/tsumugi.jpg 	 394 	876 	2136 	3082 	3797 
+桜守歌織	 香里有佐 	 graph/wave/kaori.jpg 	 graph/spectrogram/kaori.jpg 	 373 	915 	2111 	3196 	3792 
+
+`;
+
+//音声データ一覧表作成
+function make_voice_table(){
+	const table_id = 'voice_table';
+	const caption = '音声データ';
+	const div_id = 'voices';
+
+
+
+	let html = '';
+	html += `<table id="${table_id}">`;
+	html += `<caption>${caption}</caption>`;
+	const lines = voices_data.split('\n');
+	let table_head = true;
+	for (let line of lines){
+		if (line.length < 1) continue;
+		const cell_tag = table_head ? 'th' : 'td';
+		html += '<tr>';
+		const items = line.split('\t');
+		for (let item of items){
+			item = item.trim();
+			if (item.slice(-4,-3) == '.'){
+				html += `<${cell_tag}><img src="${item}" height="100"></${cell_tag}>`;
+			} else {
+				html += `<${cell_tag}>${item}</${cell_tag}>`;
+			}
+			
+		}
+		html += '</tr>';
+		table_head = false;
+	}
+
+	html += '</table>';
+	document.getElementById(div_id).innerHTML = html;
+}
+
+make_voice_table();
+</script>
+</body>
+</html>
