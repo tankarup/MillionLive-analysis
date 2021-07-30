@@ -9,36 +9,134 @@
 </head>
 <body>
     <h1>765プロライブ劇場の内部構造</h1>
+		<div class="authors">
+			<div class="author">
+				<p class="name">たんかるP</p>
+				<p class="email">tankarup@gmail.com</p>
+			</div>
+		</div>
 		<h2>構造</h2>
+			<p>ミリシタの舞台である「劇場」の内部構造がゲーム内でどのように描かれているのか整理する。</p>
 			<h3>部屋</h3>
 				<div id="rooms_table"></div>
-			<h3>ステージ</h3>
+			<h3>客席フロア</h3>
 				<div id="stage_table"></div>
-		<h2>先行図書</h2>
+			<h3>廊下</h3>
+				<div id="corridor_table"></div>
+		<h2>客席フロアサイズの推定</h2>
+			<p>まず客席フロアの座席数を明らかにする。上記の客席フロア画像から、座席数は以下のようになる。</p>
+			<ul>
+				<li>1F 下段 横10x縦12＋横12x縦12＋横10x縦12 = 384席</li>
+				<li>1F 上段 横10x縦12＋横12x縦12＋横10x縦12 = 384席</li>
+				<li>2F 横10x縦8＋横12x縦8＋横10x縦8 = 256席</li>
+				<li>合計　384 + 384 + 256 = 1024席</li>
+			</ul>
+			<p>既往の研究においては、週刊歌らん作者による推定<a href="#ref_utaran"></a>では1058席、かぐらPによる推定<a href="#ref_kagura"></a>では1054席と報告されており、ほぼ等しい結果が得られた。</p>
+			<p>次に、客席フロアのサイズを検討する。劇場客席フロアの構造は、中野サンプラザの客席フロア構造に酷似しており、中野サンプラザが元になっていることは明らかである。そのため、中野サンプラザの座席および通路サイズを元に、劇場の客席フロアサイズを算出する。</p>
+			<figure id="sunplaza_hall">
+				<img src="sunplaza_hall.jpg" width="200">
+				<figcaption>中野サンプラザホール(<a href="https://www.sunplaza.jp/sp/hall/images/img_hall2.jpg">ホームページより</a>)</figcaption>
+			</figure>
+			<p>サンプラザホールご利用案内<a href="#ref_sunplaza_hall"></a>に記載された客席の構造に基づき、座席サイズおよび通路幅を次のように定めた。</p>
+			<ul>
+				<li>一座席のサイズ：横 464mm、縦 957mm</li>
+				<li>通路幅：縦方向通路 1200mm、横方向通路 1500mm</li>
+			</ul>
+			<p>このとき客席フロアサイズは<a href="#hall_size_estimation"></a>のようになり、横方向19.7m、縦方向27.5mと推定された。</p>
+			<figure id="hall_size_estimation">
+				<img src="hall_size_estimation.jpg" width="600">
+				<figcaption>劇場客席フロアサイズの推定</figcaption>
+			</figure>
+		<h2>劇場サイズの推定</h2>
+			<p>ミリシタ劇場の構造は、ゲッサン<span class="note">(門司雪、アイドルマスターミリオンライブ！ 全5巻)</span>と酷似している箇所が多々ある。黒澤千尋氏はゲッサン版ミリオンライブの劇場をデザインしたと述べており<a href="#ref_kurosawa"></a>、ミリシタ劇場の構造はゲッサン版から逆輸入されたと考えられる。ただし作者の門司氏は、下記のように両者は必ずしも同じではないと注意喚起している。</p>
+			<blockquote class="twitter-tweet"><p lang="ja" dir="ltr">話の流れで投稿したマイクラシアターが思った以上の反響で嬉しい🙃<br>補足ですが劇場の内部はミリシタの画面見ながらその場のノリで作っただけなので全然正しくないし参考にはならないですよ！<br>漫画描く上で当時見取図は作りましたが、ミリシタの劇場とは立地も違うし内部も同じではないと思います🙃</p>&mdash; 門司雪・マガポケ新連載 (@charin_ko) <a href="https://twitter.com/charin_ko/status/1220543902546923520?ref_src=twsrc%5Etfw">January 24, 2020</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+			<p>とは言え、ミリシタ劇場とゲッサン劇場は一定の類似性を有すると推定されるため、ここではゲッサン劇場の構造をベースにしてミリシタ劇場の構造やサイズを推定する。</p>
 
+			<p>上記ツイートで言及されたゲッサン劇場「見取図」はゲッサン第5巻特別版<a href="#ref_monji"></a>に掲載されている。詳細は冊子で確認いただきたいが、概要を週刊歌らん作者がまとめており<a href="#ref_utaran2"></a>、参照が可能である。このように、ゲッサン劇場は下から、エントランス-客席フロア-ステージ-楽屋となっている。ここではミリシタ劇場もこの構造と踏襲していると仮定した。劇場の中で最も大きな範囲を占める客席フロアのサイズは、前述のとおり19.7m x 27.5mと推定しており、客席フロアのサイズを元に劇場全体の構造を推定した結果を<a href="#theater_floor"></a>に示す。劇場全体のサイズは、横方向(幅)29m x 縦方向(奥行)53mと推定した。また劇場の正面画像では、幅：高さ = 2.1 : 1 であるため、劇場の高さは14mと推定された。なお<a href="#theater_floor"></a>の中に記載した事務室(右上の部屋)には実サイズの机や椅子も記載しており、現実的なサイズ感であることが確認できる。</p>
+			<figure id="theater_floor">
+				<img src="theater_floor.jpg" width="600">
+				<figcaption>劇場構造の推定</figcaption>
+			</figure>
+
+		<h2>内部構造とゲーム画像の対照</h2>
+			<p>以上の検討により、ミリシタ劇場内でどの場所に各部屋が配置されているのかが推定できた。ゲーム画像と対比した図を以下に示す。</p>
+			<figure id="rooms_along_corridor">
+				<img src="rooms_along_corridor.jpg" width="600">
+				<figcaption>事務室前廊下に面した部屋</figcaption>
+			</figure>
+			<figure id="rooms_1F">
+				<img src="rooms_1F.jpg" width="600">
+				<figcaption>劇場1Fの部屋</figcaption>
+			</figure>
+			<figure id="rooms_3F">
+				<img src="rooms_3F.jpg" width="600">
+				<figcaption>劇場3Fの部屋</figcaption>
+			</figure>
+
+		<h2>3Dモデルの作成</h2>
+			<p>ここまでで検討したミリシタ劇場構造を<a href="#theater_3d"></a>のように3Dに書き起こした。またこの3Dモデルはウェブサービス<a href="https://cluster.mu/w/92458ea4-6424-44c8-8833-33491ceccd5a">clusterで自由に歩き回れる</a>ようにした。clusterはイベントに使うこともできるらしいので、使いたい人がいたら声をかけてください。</p>
+			<figure id="theater_3d">
+				<a href="https://cluster.mu/w/92458ea4-6424-44c8-8833-33491ceccd5a"><img src="theater_3d.jpg" width="600"></a>
+				<figcaption>シアター3Dモデル</figcaption>
+			</figure>
+		
+		<h2>課題</h2>
+			<p>以上の検討結果から、ミリシタ劇場は現実的なサイズが設定されていることが確認できた。しかし、ゲーム内で登場する部屋が全て説明できたわけではない。以下にまだ説明しきれていない項目を挙げる。</p>
+			<ul>
+				<li>客席フロアには傾斜がついており、1Fには3段階に高さの異なる入口扉がある。しかしこのサイズの劇場で、3段階の入口扉を設けた構造にするのは難しい。中野サンプラザと同じ客席フロア構造にしているためであるが、中野サンプラザは客席数2222であり、ミリシタ劇場の2倍のキャパである。2倍サイズが異なるフロアを同じ構造にするのは無理がある。</li>
+				<li>資料室、地下室、レストスペースなどはどこにあるのか分からない。</li>
+				<li>控え室では、アイドルは衝立の向こう側に移動し、ドアを出るような動きがある。しかしそんな場所にドアはない。</li>
+				<li>事務室とレッスンルームが同じフロアにあるように動くが、大きさ的には別のフロアと考えたほうがよい。</li>
+			</ul>
+			
+		<h2>まとめ</h2>
+			<ul>
+				<li>ミリシタ劇場の建物サイズは、幅29m x 奥行53m x 高さ14mと推定された。</li>
+				<li>ミリシタ劇場の内部構造をゲッサン劇場に準拠すると、そこそこ整合性のあるサイズ感となった。</li>
+				<li><a href="https://cluster.mu/w/92458ea4-6424-44c8-8833-33491ceccd5a">3Dモデルで歩き回れる</a>ようにしたので遊びに来て。</li>
+			</ul>
+		<h2>参考文献</h2>
+		<ul class="biblio">
+			<li id="ref_utaran">週刊歌らん作者、<a href="https://www.weekly-utaran.net/archives/idolmaster-millionlive-capacity-consideration.html">アイドルマスターミリオンライブ THE@TER DREAMERS01 付属アニメーションPVから見るライブシアター劇場の客席数</a>、2019 (2021-07参照)</li>
+			<li id="ref_kagura">かぐらP、<a href="https://ch.nicovideo.jp/kagura-p/blomaga/ar882880">映像から見る765プロライブ劇場の詳細【ミリオン雑記】※追記あり</a>、2015(2021-07参照)</li>
+			<li id="ref_sunplaza_hall"><a href="https://www.sunplaza.jp/hall/sponsor/images/riyou.pdf">サンプラザホールご利用案内</a></li>
+			<li id="ref_kurosawa">黒澤千尋/ZAZENBEAT、<a href="https://twitter.com/zazenbeat">ツイッターバイオ</a>(2021-07参照)</li>
+			<li id="ref_monji">門司雪、アイドルマスターミリオンライブ！　第5巻　特別版、2016</li>
+			<li id="ref_utaran2">週刊歌らん作者、<a href="https://www.weekly-utaran.net/archives/idolmaster-millionlive-gekkansunday-location.html">ゲッサン版アイドルマスターミリオンライブ765プロライブシアター劇場見取り図書き起こしと所在地推定</a>、2016 (2021-07参照)</li>
+		</ul>
 
     <script src="../article.js"></script>
 <script>
-const room_data = `部屋名	部屋名ソース	室内画像	画像ソース	備考
-会議室	プラチナスターシアター リフレインキス 第2話	meeting.jpg	プラチナスターツアー  ～Special Wonderful Smile～　第1話	
-事務室	施設移動	office.jpg	ふれあい	
-ドレスアップルーム	施設移動	dressing.jpg	ふれあい	
-控え室	施設移動	waiting.jpg	メインコミュ　第5話 ある晴れた日の歌声、フェスコミュ  09　スタイリッシュにキメるわよ♪	
-エントランス	施設移動	entrance.jpg	ふれあい	
-グラビアスタジオ	施設移動	studio.jpg	グラビアスタジオ	
-レッスンルーム	MTW08 Return at Miraclesonic★ 3	lesson.jpg	SSR「<a href="https://idolmaster-official.jp/news/01_1588.html">初恋バタフライ　宮尾美也</a>」、メインコミュ  第5話 ある晴れた日の歌声、メインコミュ　第6話 そして少女達は立ち上がった	
-衣装部屋		closet.jpg	MILLION LIVE WORKING☆ 熱踏！アイドルカーニバル	
-給湯室		kitchen.jpg	メインコミュ　第4話 ふるえるこころ	
-資料室<img src="images/library_plate.jpg" height="100px">	メインコミュ  第65話 この、てのひらのなか	library.jpg	プラチナスターシアター ～Persona Voice～ 第5話、プラチナスターシアター リフレインキス 第4話	
-地下室		basement.jpg	プラチナスターツアー  ～Special Wonderful Smile～　第6話	
+const room_data = `部屋名	部屋名ソース	室内画像	画像ソース
+事務室	施設移動	office.jpg	ふれあい
+ドレスアップルーム	施設移動	dressing.jpg	ふれあい
+控え室	施設移動	waiting.jpg	メインコミュ　第5話 ある晴れた日の歌声、フェスコミュ  09　スタイリッシュにキメるわよ♪
+エントランス	施設移動	entrance.jpg	ふれあい
+グラビアスタジオ	施設移動	studio.jpg	グラビアスタジオ
+レッスンルーム	MTW08 Return at Miraclesonic★ 3	lesson.jpg	SSR「<a href="https://idolmaster-official.jp/news/01_1588.html">初恋バタフライ　宮尾美也</a>」、メインコミュ  第5話 ある晴れた日の歌声、メインコミュ　第6話 そして少女達は立ち上がった
+給湯室		kitchen.jpg	メインコミュ　第4話 ふるえるこころ
+会議室	プラチナスターシアター リフレインキス 第2話	meeting.jpg	プラチナスターツアー  ～Special Wonderful Smile～　第1話
+医務室	メインコミュ90話	healthcare.jpg	メインコミュ90話
+資料室<img src="images/library_plate.jpg" height="100px">	メインコミュ  第65話 この、てのひらのなか	library.jpg	プラチナスターシアター ～Persona Voice～ 第5話、プラチナスターシアター リフレインキス 第4話
+地下室		basement.jpg	プラチナスターツアー  ～Special Wonderful Smile～　第6話
+レストスペース	DIAMOND JOKER　第2話	rest.jpg	メインコミュ  第65話、プラチナスターシアター ～NO CURRY NO LIFE～
+衣装部屋		closet.jpg	MILLION LIVE WORKING☆ 熱踏！アイドルカーニバル
+控え室２		waiting2.jpg	MILLION LIVE WORKING☆ 熱踏！アイドルカーニバル 第7話
 
 `;
-const stage_data = `客席画像	画像ソース
+const stage_data = `客席フロア画像	画像ソース
 stage-front.jpg	第1回 ～FairyTaleじゃいられない～ 第6話 妖精たちの飛翔！
 stage-back.jpg	エイプリルフールコミュ2019　スタンバイ！／死闘の果てに
 stage-right.jpg	第32回 ～Special Wonderful Smile～ 第5話 あなたは秘密とともに
 stage-left.jpg	第26回 ～待ちぼうけのLacrima～ 第6話 せつなさの理由
 `;
+
+const corridor_data = `場所	画像
+事務所前廊下	corridor.jpg
+事務所前階段	office-front.jpg
+エントランス～楽屋棟	to-office.jpg
+`;
+
 function make_table(data, div_id, table_id, caption){
 	let html = '';
 	html += `<table id="${table_id}">`;
@@ -65,7 +163,8 @@ function make_table(data, div_id, table_id, caption){
 	document.getElementById(div_id).innerHTML = html;
 }
 make_table(room_data, 'rooms_table', 'rooms','部屋');
-make_table(stage_data, 'stage_table', 'stage','客席');
+make_table(stage_data, 'stage_table', 'stage','客席フロア');
+make_table(corridor_data, 'corridor_table', 'corridor','通路');
 </script>
 </body>
 </html>
