@@ -1,6 +1,6 @@
 <html>
   <head>
-    <title>ツナガルコト::ミリシタ・シャニマス：イメージカラー</title>    
+    <title>ツナガルコト::カラーコードを＊＊に変換</title>    
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
@@ -23,7 +23,7 @@
 
   </head>
   <body>
-      <h1 class="bg-primary text-light">ツナガルコト::ミリシタ・シャニマス：イメージカラー</h1>
+      <h1 class="bg-primary text-light">カラーコードを＊＊に変換</h1>
       <div id="content"  class="container-fluid d-flex justify-content-center align-items-center">
       <div id="colors_area">
       <h2 class="alert-primary">色一覧</h2>
@@ -186,11 +186,12 @@
 </div>
 
         <div id="button_area">
-            <button type="button" class="btn btn-primary" onclick="generateCircle();">生成</button>
+            <button type="button" class="btn btn-primary" onclick="start_process();">生成</button>
         </div>
-        <div id="canvas-holder" style="width:70%;">
+        <div id="canvas-holder" style="width:50%;">
             <canvas id="myChart"></canvas>
         </div>
+		<div id="color_table"></div>
     </div>
         <div id="informations">
             <p>アイドルカラーは<a href="https://imas-db.jp/misc/color.html">アイマスDB</a>を使用させていただいています。ありがとうございます。</p>
