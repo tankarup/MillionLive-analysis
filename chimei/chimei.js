@@ -95,7 +95,7 @@ function create_cluster(idol_name){
 		   isAlphaNumericIcon: true,
 		   text: idol_name[0],
 		};
-		const marker = L.marker([parseFloat(place.lat),parseFloat(place.lon)], { icon: L.BeautifyIcon.icon(options), draggable: true }).bindPopup(`${place.name}<br>${place.kana}`);
+		const marker = L.marker([parseFloat(place.lat),parseFloat(place.lon)], { icon: L.BeautifyIcon.icon(options), draggable: false }).bindPopup(`${place.name}<br>${place.kana}`);
 		marker.on('mouseover', function (e) {
             this.openPopup();
         });
