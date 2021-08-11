@@ -109,17 +109,17 @@ function addSectionNum () {
 	    nodes[i].setAttribute("data-h3n",0);     h3n=0;
 	    nodes[i].setAttribute("data-h4n",0);     h4n=0;
 	    if (h1AsIndex) {
-		nodes[i].innerHTML=h1n.toString()+" "+nodes[i].innerHTML;
+		nodes[i].innerHTML=h1n.toString()+"."+" "+nodes[i].innerHTML;
 	    }
 	} else if (nodes[i].tagName == "H2") {
 	    nodes[i].setAttribute("data-h2n",++h2n);
 	    nodes[i].setAttribute("data-h3n",0);     h3n=0;
 	    nodes[i].setAttribute("data-h4n",0);     h4n=0;
 	    if (h1AsIndex) {
-		nodes[i].innerHTML=h1n.toString()+"."+h2n.toString()+
+		nodes[i].innerHTML=h1n.toString()+"."+h2n.toString()+"."+
 		    " "+nodes[i].innerHTML;
 	    } else {
-		nodes[i].innerHTML=h2n.toString()+" "+nodes[i].innerHTML;
+		nodes[i].innerHTML=h2n.toString()+"."+" "+nodes[i].innerHTML;
 	    }
 	} else if (nodes[i].tagName == "H3") {
 	    nodes[i].setAttribute("data-h2n",h2n);
@@ -127,10 +127,10 @@ function addSectionNum () {
 	    nodes[i].setAttribute("data-h4n",0);     h4n=0;
 	    if (h1AsIndex) { 
 		nodes[i].innerHTML=h1n.toString()+"."+h2n.toString()+
-		    "."+h3n.toString()+" "+nodes[i].innerHTML;
+		    "."+h3n.toString()+"."+" "+nodes[i].innerHTML;
 	    } else {
 		nodes[i].innerHTML=h2n.toString()+
-		    "."+h3n.toString()+" "+nodes[i].innerHTML;
+		    "."+h3n.toString()+"."+" "+nodes[i].innerHTML;
 	    } 
 	} else if (nodes[i].tagName == "H4") {
 	    nodes[i].setAttribute("data-h2n",h2n);
@@ -139,11 +139,11 @@ function addSectionNum () {
 	    if (h1AsIndex) { 
 		nodes[i].innerHTML=h1n.toString()+"."+
 		    h2n.toString()+"."+h3n.toString()+"."+
-		    h4n.toString()+" "+nodes[i].innerHTML;
+		    h4n.toString()+"."+" "+nodes[i].innerHTML;
 	    } else {
 		nodes[i].innerHTML=
 		    h2n.toString()+"."+h3n.toString()+"."+
-		    h4n.toString()+" "+nodes[i].innerHTML;
+		    h4n.toString()+"."+" "+nodes[i].innerHTML;
 	    }
 	}
     }
@@ -259,10 +259,10 @@ function addFigureNum () {
 	var figCaps = lis[i].getElementsByTagName("figcaption");
 	if (figCaps.length<1) {
 	    var figCap=document.createElement("figcaption");
-	    figCap.innerHTML = figurePrefix + figNum.toString() + figureSuffix;
+	    figCap.innerHTML = figurePrefix + figNum.toString()+"." + figureSuffix;
 	    lis[i].appendChild(figCap);
 	} else {
-	    figCaps[0].innerHTML = figurePrefix + figNum.toString() + figureSuffix + captionSeparator
+	    figCaps[0].innerHTML = figurePrefix + figNum.toString()+"." + figureSuffix + captionSeparator
 		+ figCaps[0].innerHTML;
 	}
 	lis[i].setAttribute("fignum", figNum.toString());
@@ -276,7 +276,7 @@ function addTableNum () {
     for (var i=0; i < lis.length; i++ ) {
 	var tblCaps = lis[i].getElementsByTagName("caption");
 	if (tblCaps.length>0) {
-	    tblCaps[0].innerHTML = tablePrefix+tblNum.toString()+tableSuffix + captionSeparator
+	    tblCaps[0].innerHTML = tablePrefix+tblNum.toString()+"."+tableSuffix + captionSeparator
 		+ tblCaps[0].innerHTML;
 	    tblCaps[0].parentNode.setAttribute("tblnum", tblNum.toString());
 	    tblNum++;
