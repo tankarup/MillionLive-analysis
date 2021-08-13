@@ -30,11 +30,28 @@
             <caption>表2　765AS 肌の色の変遷</caption>
             <div id="as_skin_table"></div>
         </div>
-        <p>調査手順は以下の通りです。</p>
-        <ol>
+	<h2>調査手順</h2>
+        <p>肌の色の取得方法は以下の通りです。</p>
+		<ol>
             <li>各ゲームの公式HPのアイドル紹介画像(3Dモデル)を開く。</li>
-            <li>アイドルの顔の目と目の間付近の色を抽出する。抽出にはWindows用アプリ"<a href="http://www.nattyware.com/pixie.php">pixie</a>"を使用しました。</li>
+            <li>アイドルの顔の目と目の間付近の色を抽出する。</li>
         </ol>
+
+		<ul>備考
+			<li>抽出にはWindows用アプリ"<a href="http://www.nattyware.com/pixie.php">pixie</a>"を使用しました。</li>
+			<li>例えばミリシタの春香の肌の色は、<a href="https://millionlive.idolmaster.jp/theaterdays/#idol">アイドル紹介ページ</a>で下図の場所の色を取得しました。</li>
+			<li>目と目の間の色を採用した理由は以下のとおりです。
+				<ul>
+					<li>顔はほぼ正面を向いているので、おでこや目と目の間は画像に対して平行になっている→陰影が付きにくい部分である。</li>
+					<li>おでこは髪で隠れることが多い。</li>
+				</ul>	
+			</li>
+		</ul>
+		<div class="fig">
+            <p><img src="example.jpg" alt=""></p>
+            <caption>図 　765ASの平均肌色</caption>
+        </div>
+
 
     <h2>考察</h2>
         <p>肌の色がわかりましたので、表1のミリシタデータをイエベ・ブルベに分類します。なんとなく二次元マップにしたくなったので、RGB値を主成分分析して第一成分と第二成分でマップを作りました。黄色は青の補色なので、ブルベはBの値が大きい軸、イエベはBの値が小さい軸にしました。適当です。</p>
