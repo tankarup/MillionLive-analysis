@@ -68,7 +68,7 @@ Road to stage	2016-10-22	2019-04-22	comic	range	ミリオン
 Blooming Clover	2017-04-01	継続中	comic	range	ミリオン
 Brand New Song	2017-06-12	継続中	comic	range	ミリオン
 SideM	2014-02-28	継続中	game	range	SideM
-LIVE ON ST@GE!	2017-08-30	継続中	game	range	SideM
+LIVE ON ST@GE!	2017-08-30	2021-08-31	game	range	SideM
 アニM	2017-10-01	2017-12-01	anime	range	SideM
 315プロNight!	2015-04-03	継続中	radio	range	SideM
 ドラマチックステージ	2015-11-01	2017-09-01	comic	range	SideM
@@ -78,6 +78,7 @@ LIVE ON ST@GE!	2017-08-30	継続中	game	range	SideM
 はばたきラジオステーション	2018-06-14	継続中	radio	range	シャニマス
 シャイニーカラーズ(Newtype)	2019-07-23	継続中	comic	range	シャニマス
 ポプマス	2021-01-21	継続中	game	range	ポプマス
+
 `;
 const lines = data.split('\n');
 let datasets = [];
