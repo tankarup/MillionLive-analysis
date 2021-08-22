@@ -6,9 +6,10 @@
   padding:0;
   background: #7494c0;
   overflow: hidden;
-  max-width: 400px;
-  margin: 20px auto;
+  //max-width: 400px;
+  margin: 0;
   font-size: 80%;
+  //height: 100%;
 }
 
 /* タイトル部分 */
@@ -18,6 +19,7 @@
   text-align: center;
   font-size: 150%;
   color: #ffffff;
+  height: 10%;
 }
 
 /* 会話部分 */
@@ -28,7 +30,7 @@
 }
 
 .line__container .scroll {
-  height: 500px;
+  height: 90%;
   overflow-y: scroll;
 }
 
@@ -93,7 +95,6 @@
 /* コメントエリア */
 .line__container .line__left  .text {
   margin: 0;
-  
   position: relative;
   padding: 10px;
   border-radius: 20px;

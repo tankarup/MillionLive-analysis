@@ -2,13 +2,14 @@
 <head>
   <meta charset="UTF-8"/>
   <title>星梨花・琴葉親戚説におけるやりとり</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <link rel='stylesheet' href='style.css' type='text/css' media='all' />
   <style>
 .footer {
   background: #eee;
   padding: 7px;
   text-align: left;
-
+	//min-height: 10vh;
   color: gray;
 }
 .pseudobox {
@@ -22,6 +23,23 @@
 	font-size: 20px;
 	user-select: none;
 	box-shadow: 3px 3px 2px rgba(0, 0, 0, .5);
+}
+
+html {
+  height: 100%;
+  margin: 0px;
+}
+body, .line__container {
+	margin: 0px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.line__container {
+	flex: 1;
+}
+.line__title {
+	flex: 1;
 }
   </style>
 </head>
@@ -42,11 +60,12 @@
 
 	</div>
     <!--　▲会話エリア ここまで -->
-	<div class="footer">
-		<div id="button_proceed" class="pseudobox">Aa</div>
-	</div>
+
   </div>
   <!--　▲LINE風ここまで -->
+  <div class="footer">
+	<div id="button_proceed" class="pseudobox">Aa</div>
+</div>
 <script>
 const dialogue = `星梨花	琴葉お姉ちゃん、今お話しいいですか？
 琴葉	大丈夫だよ。どうしたの？
