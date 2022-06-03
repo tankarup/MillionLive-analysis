@@ -23,11 +23,12 @@
 			<figcaption>育からエミリーへの「オファーテキスト」</figcaption>
 		</figure>
 		<p>このオファーテキストは、誰から誰に向けた台詞なのかがはっきりしており、また分量が均等であるため、テキスト分析に非常に向いています。</p>
-		<p>ということで分析してみましょう。</p>
-		<p>実は以前にもオファーテキスト分析を実施したことがあります<a href="#ref_offer_text"></a>。この時は、使用している単語に注目して、テキストマイニングを実施しました。</p>
-		<p>今回は文体に注目してみます。</p>
+		<p>で、ある日、このツイートを見かけました。</p>
+		<blockquote class="twitter-tweet"><p lang="ja" dir="ltr">春日未来ちゃんを書くときは「っ」を多用するとなんかそれっぽくなる</p>&mdash; かめぴP (@kamepppppppp) <a href="https://twitter.com/kamepppppppp/status/1512565894974947330?ref_src=twsrc%5Etfw">April 8, 2022</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+		<p>オファーテキストで「っ」の出現頻度を調べたらアイドルの傾向が分かるんじゃね？と思ったのでやってみました。</p>
+		<p>ちなみに、以前にもオファーテキスト分析を実施したことがあります<a href="#ref_offer_text"></a>。この時は、使用している単語に注目して、テキストマイニングを実施しました。</p>
 
-		<h2>使用語ランキング</h2>
+		<h2>ランキング</h2>
 		<p>オファーテキストから「っ！？、。～…☆♪ぁー」の数をカウントし、ランキングを作りました。</p>
 		<p>使用したオファーテキストは、グリマス日和さんが集めているテキスト<a href="#ref_greemas"></a>を転用しました。分析個数は2661個で、一人当たり平均51個です。</p>
 
@@ -39,28 +40,28 @@
 
 
 		<h2>アイドル分類</h2>
-		<p>オファーテキストで各アイドルがどの文字を多用しているのかが分かりました。では、文字の使い方、つまり文体が似ているアイドルを探してみましょう。</p>
-		<p>上記のグラフは1オファーあたりのテキスト数をカウントしていますが、このデータを100文字あたりのテキスト数に換算し、主成分分析にかけて文字を使う傾向を二次元プロットしました。使ったデータの<a href="data.csv">CSVファイル</a>も置いときます。</p>
-		<p>ざっくり分類すると、
-		<ul>
-			<li>右側に、記号をあまり使わない「クール」系</li>
-			<li>左上が、！？☆っを使う「元気」系</li>
-			<li>下側が、♪～を使う「楽しい」系</li>
-			<li>右上が、、…ぁを使う「おとなしい」系</li>
-		</ul>
-		って感じでしょうか。</p>
-		<p>近くに配置されたアイドルの言葉遣いが似てるってことだと思いますが、気になったところをいくつか挙げます。
-			<ul>
-				<li>瑞希×志保：クール系美少女ユニットの貫禄です。紬はまだクールになりきれていないようです。</li>
-				<li>歌織×エミリー：落ち着いた、いいところのお嬢さんの話し方なんでしょうね。おや、近くに千鶴さんがいますね。</li>
-				<li>亜利沙×育：テキストの内容はともかくとして文体は似てるようです。個人的にもメールをやりとりしているようですし…(2022/5/24メール)</li>
-			</ul>
-		</p>
-
-		<figure id="biplot">
-			<img src="biplot.jpg" width="800">
-			<figcaption>使用頻度が高い文字で主成分分析し、第1・第2主成分でプロット</figcaption>
+		<p>オファーテキストで各アイドルがどの文字(記号)を多用しているのかが分かりました。では、文字の使い方、つまり文体が似ているアイドルを探してみましょう。</p>
+		<p>上記のグラフは1オファーあたりのテキスト数をカウントしていますが、このデータを100文字あたりのテキスト数に換算し、階層型クラスタリング分析しました。分析方法はこちらのサイト<a href="#ref_cluster"></a>などを参照してください。使ったデータの<a href="data.csv">CSVファイル</a>も置いときます。</p>
+		<figure id="cluster">
+			<img src="cluster.jpg" width="800">
+			<figcaption>文字(記号)の使用頻度で階層型クラスタリング</figcaption>
 		</figure>
+		<p>7グループに分類してラベルを付けてみました。</p>
+		<figure id="group">
+			<img src="group.jpg" width="800">
+			<figcaption>7グループに分類</figcaption>
+		</figure>
+		<p>結構綺麗に分類されたように思います。特記したいところをいくつか。</p>	
+		<ul>
+			<li>大人クール組は、しっくり来たなぁ。こんなに綺麗なグループができるとは思わなかった。</li>
+			<li>クール系美少女ユニットがグループ化されて嬉しい。3人とも話し方が似てるんですね。千早と貴音がクール系美少女ユニットに参入するのも納得感高い。</li>
+			<li>なぜか俠気乱舞的なグループが出来ました。ツンデレとはちょっと違うしなぁ。何とラベルを付けたらいいんだろう？</li>
+			<li>マイペース組と大人しい組は特異性がはっきりしていてわかりやすい。</li>
+			<li>可愛い組はいろいろ面白い。このみ・莉緒が大人組じゃなくて可愛い組に入ったのは、そりゃまぁそうかという結果ですね。真や亜利沙が可愛い組なのもデータで証明されてしまいましたね。</li>
+			<li>元気組も文句なし。個人的には、育と歩のからみをもっと増やしてほしいんだけど、話し方が似ている結果になったのは意外だった。対照的に見えたんだけど、実は似たところがあるんだろうか？</li>
+		</ul>
+
+
 
 		<h2>あなたは誰に似ている？</h2>
 		<p>せっかくなので、あなたの「オファーテキスト」をテキストボックスに入力してください。あなたと似ているアイドルを調べます。各文字の二乗和を取って判定しただけなのでかなり適当です<span class="note">(スコア=Σ(あなたの文字使用頻度-アイドルの文字使用頻度)<sup>2</sup>で計算。各文字の独立性とか考慮すべきなんでしょうが…)</span>。ちゃんと判定したい人は「ミリオンライブ！台詞判定」<a href="#ref_hantei"></a>をどうぞ。</p>
@@ -75,12 +76,20 @@
 
 			</table>
 		</div>
+		<h2>まとめ</h2>
+		<ul>
+			<li>オファーテキストでアイドルが使っている語(記号)の数を数えると、アイドルごとに特徴がよく顕れていた。</li>
+			<li>語の使用頻度で階層型クラスタリングすると、かなり納得度の高いグループができた。</li>
+			<li>クール系美少女ユニットの存在が確固たるものとなった。</li>
+		</ul>
+
 		<h2>参考文献</h2>
 			<ul class="biblio">
 				<li id="ref_greemas">グリマス日和、<a href="https://greemas.doorblog.jp/archives/cat_1329442.html">オファー</a></li>
 				<li id="ref_offer_text">たんかる、<a href="https://tankarup.github.io/MillionLive-analysis/texts/offer_text_analysis/offer_text_analysis.html">オファーテキスト分析によるアイドルのグループ化の試み</a></li>
 				<li id="ref_offer_analysis">たんかる、<a href="https://docs.google.com/spreadsheets/d/1gtJPvCjfQmQgWI43w38QvVoml8OUCK0lHSJjdDh9lm8/edit#gid=1389740003">オファーテキスト簡易分析</a></li>
 				<li id="ref_hantei">たくみ、<a href="https://www.shuukei.info/imas_ml_words/#/">ミリオンライブ！台詞判定</a></li>
+				<li id="ref_cluster">金明哲、<a href="https://www1.doshisha.ac.jp/~mjin/R/Chap_28/28.html">Rとクラスター分析（１）</a></li>
 			</ul>
 			<p>本資料では、アイドルマスターミリオンライブシアターデイズのオファーテキストを分析に使用しています。オファーテキストの著作権はBNEI社にあります。</p>
 		
@@ -120,10 +129,10 @@ function set_idol(idol){
 	document.getElementById('idol').value = idol;
 }
 function age_sage(your_value, idol_value){
-	if (!Number.isFinite(your_value)) return 'が何か変です……'
-	if (your_value/idol_value > 1.2) return 'の使用率を下げましょう。';
-	if (your_value/idol_value < 0.8) return 'の使用率を上げましょう。';
-	return 'の使用率はばっちりです。'
+	if (!Number.isFinite(your_value)) return '<small>が何か変です……</small>'
+	if (your_value/idol_value > 1.2) return '<small>の使用率を</small><span style="color:blue;">下げましょう。</span>';
+	if (your_value/idol_value < 0.8) return '<small>の使用率を</small><span style="color:red;">上げましょう。</span>';
+	return '<small>の使用率は</small><span style="color:green;">ばっちりです。</span>'
 }
 function show_style_change(){
 	const idol = document.getElementById('idol').value;
@@ -131,7 +140,7 @@ function show_style_change(){
 	const your_style = get_your_style();
 	let html ='';
 	for (const word of words){
-		html += `<li>「${word}」${age_sage(your_style[word], idol_style[word])}</li>`;
+		html += `<li><strong>「${word}」</strong>${age_sage(your_style[word], idol_style[word])}</li>`;
 	}
 	document.getElementById('change_style').innerHTML = `<ul>${html}</ul>`;
 
