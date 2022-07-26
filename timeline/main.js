@@ -2,19 +2,19 @@
 var container = document.getElementById('visualization');
 const data = `
 アケマス	2005-07-26	2010-09-10	game	range	アイマス
-箱マス	2007-01-25	2007-12-25	game	range	アイマス
+箱マス	2007-01-25	2009-08-25	game	range	アイマス
 L4U!	2008-02-28	2009-08-26	game	range	アイマス
 SP	2009-02-19		game	point	アイマス
 DS	2009-09-17		game	point	アイマス
 モバイル	2010-12-21		game	point	アイマス
 アイマス2	2011-02-24	2013-06-27	game	range	アイマス
 モバイルi	2012-03-30	2016-01-18	game	range	アイマス
-SHINY FESTA	2012-10-25	2014-02-19	game	range	アイマス
+SHINY FESTA	2012-10-25		game	point	アイマス
 OFA	2014-05-15	2015-06-24	game	range	アイマス
 マストソングス	2015-12-10		game	point	アイマス
 プラチナスターズ	2016-07-28	2016-12-20	game	range	アイマス
-ステラステージ	2017-12-21	2017-03-15	game	range	アイマス
-スターリットシーズン	2021-10-04	継続中	game	range	アイマス
+ステラステージ	2017-12-21	2018-03-15	game	range	アイマス
+スターリットシーズン	2021-10-04	2022-03-10	game	range	アイマス
 輝きの向こう側へ!	2014-01-25		anime	point	アイマス
 ぷちます！	2008-09-01	継続中	comic	range	アイマス
 アニマス	2011-07-07	2011-12-22	anime	range	アイマス
@@ -78,9 +78,7 @@ GROWING STARS	2021-10-06	継続中	game	range	SideM
 シャニマス	2018-04-24	継続中	game	range	シャニマス
 はばたきラジオステーション	2018-06-14	継続中	radio	range	シャニマス
 シャイニーカラーズ(Newtype)	2019-07-23	継続中	comic	range	シャニマス
-ポプマス	2021-01-21	継続中	game	range	ポプマス
-
-
+ポプマス	2021-01-21	2022-07-21	game	range	ポプマス
 
 `;
 const lines = data.split('\n');
