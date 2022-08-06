@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../article.css"> 
+    <title>ミリシタの目のデザインを調査</title>
+</head>
+<body>
+    <h1>ミリシタの目のデザインに関する調査</h1>
+		<div class="authors">
+			<div class="author">
+				<p class="name">たんかるP</p>
+				<p class="twitter"><a href="https://twitter.com/tankaru">@tankaru</a></p>
+				<p class="date">2022-08-06</p>
+			</div>
+		</div>
+		<ul class="tableOfContents">目次</ul>
+
+		<h2>はじめに</h2>
+			<p>ほげ</p>
+		<h2>アイドルによる違い</h2>
+			<p>アイドルの目のデザインを調査するため、まず目の画像を収集した。目の画像は、グラビアスタジオで背景をブランニューシアターに設定し、アイドルが正面に見えるようにカメラ位置を設定してキャプチャした画像を使用した。杏奈のOFFモード画像は、ドレスアップモードで画像をキャプチャした。収集した画像の一覧を<a href="#eye_list"></a>に示す。</p>
+			<p></p>
+			<figure id="eye_list">
+				<img src="images/list.jpg" width="800">
+				<figcaption>3Dモデルの目の一覧(杏奈とジュリアはOFFモードを含む)</figcaption>
+			</figure>
+			
+			<p>なお、以下の議論において使用する、目の各部の名称は<a href="#eye_part"></a>のように定めた。</p>
+			<figure id="eye_part">
+				<img src="images/part.jpg" width="600">
+				<figcaption>各部位の名称</figcaption>
+			</figure>
+
+			<p><a href="#eye_list"></a>の画像から調べた目の特徴のうち、睫毛の本数と虹彩の色を<a href="#eyes_table"></a>にまとめた。なお<a href="#eyes_table"></a>のアイドルの名前の色はキャラカラーである。</p>
+			<div id="eyes_div"></div>
+
+			<h3>キャラカラーと虹彩の色</h3>
+				<p>キャラカラーと虹彩の色の関係を把握するため、それぞれの色相をプロットした結果を<a href="#kousai"></a>に示す。プロットが対角線上に乗った場合は、キャラカラーと虹彩の色相が一致したことになる。</p>
+				<p>グラフを見ると、キャラカラーと虹彩の色相が一致または類似したアイドルはそれほど多くなく、キャラカラーと虹彩の色は相関が低いことが分かった。また、キャラカラーが緑～青系統(色相500～600)のアイドルは、虹彩の色が赤～黄(色相350～400)に設定されているケースのほうが多いことが確認された。したがって、大多数のアイドルについては、キャラカラーと独立して目の色が設定されたと考えられる。</p>
+				<figure id="kousai">
+					<img src="images/graph.jpg" width="800">
+					<figcaption>キャラカラーと虹彩の関係(グラフを見やすくするため、色相が250以下の場合は色相に360を足してグラフ化した)</figcaption>
+				</figure>
+
+			<h3>奈緒</h3>
+				<p>奈緒の目は、上フレームラインに細いラインが追加されており、これは他のアイドルにない特徴である。奈緒はアイラインをしっかりと引いているようである。</p>
+				<figure id="nao">
+					<img src="images/eyes/nao.jpg" width="200">
+					<figcaption>奈緒の目</figcaption>
+				</figure>
+
+			<h3>昴</h3>
+				<p>昴の目には下フレームラインがなく、これは他のアイドルにない特徴であり、見た目にもかなり違った印象を受ける。</p>
+				<figure id="subaru">
+					<img src="images/eyes/subaru.jpg" width="200">
+					<figcaption>昴の目</figcaption>
+				</figure>
+
+			<h3>下睫毛</h3>
+				<p>下睫毛があるアイドルは、ジュリア(OFFモード)、紬、歌織の3人である。この3人は、アイドルの基本並び順で最後の3人であるが、並び順と下睫毛の有無がどのように関連しているのかは不明である。紬と歌織はミリシタ参加組であり、他アイドルとの差別化のために下睫毛がついた可能性が考えられる。</p>
+				<figure id="matsuge">
+					<img src="images/eyes/juria2.jpg" width="200"><img src="images/eyes/tsumugi.jpg" width="200"><img src="images/eyes/kaori.jpg" width="200">
+					<figcaption>下睫毛があるアイドル：ジュリア、紬、歌織</figcaption>
+				</figure>
+
+			<h3>ミリシタ参加組</h3>
+				<p>紬の目はほぼ直線で構成されており、非常に四角い。歌織の目は、円形に近い。特に目頭が低いところにその特徴が顕れている。この2人はミリシタ参加組であり、下睫毛がついていることも含めて、グリマス組との差別化のために特徴的なデザインを採用したものと思われる。ただしこれらの特徴については、より定量的な手法(真円度の計測など)を用いて評価すべきである。</p>
+				<figure id="mirishita">
+					<img src="images/eyes/tsumugi.jpg" width="200"><img src="images/eyes/kaori.jpg" width="200">
+					<figcaption>ミリシタ参加組：紬は四角く、歌織は丸い</figcaption>
+				</figure>
+
+			<h3>その他</h3>
+				<ul>
+					<li>くぼみの形状はさまざまであったが、整理するのが困難であったため、ここでは詳細を記さない。今後の課題とする。</li>
+					<li>たれ目/釣り目、目の平坦さ/黒目と白目のサイズ比などを定量的に評価することが可能であろうが、今回は調査しなかった。今後の課題とする。</li>
+					<li>アイドルの特徴(活発さや年齢など)により睫毛の本数が違うのではないかと予想したが、特に関連性は見出せなかった。</li>
+				</ul>
+
+		<h2>カードによる違い</h2>
+			<p>カードの目のデザインにバリエーションがあるのかを確認した。春香を対象とし、2022年7月までに実装されたカードの目の画像を収集した。収集結果を<a href="#cards"></a>に示す。収集結果から得られた知見を以下に示す。</p>
+			<ul>
+				<li>N・Rカードおよび「CHALLENGE FOR GLOW-RY DAYS」以前のSRカード(グリマス由来のSRカードを除く)の目のデザインは、3Dモデルに準拠していた。</li>
+				<li>SRカードのうち、グリマスに由来するSRカードの目のデザインは、元となるグリマスのカードに寄せてデザインされているようであった。</li>
+				<li>SRカードのうち、「MILLION LIVE CLOSET!」以降のSRカードの目のデザインは、それ以前のデザインと比べて、
+					<ul>
+						<li>上フレームラインの上に細いラインが追加</li>
+						<li>下睫毛が追加</li>
+						<li>ハイライトが多角形に</li>
+					</ul>
+					といった点が変更されていた。なお「夏服」シリーズは「MILLION LIVE CLOSET!」以降に実装されたカードではあるものの、「制服」シリーズと同じ画像を採用しているため、この変更内容は適用されていない。
+				</li>
+				<li>SSRカードは、
+					<ul>
+						<li>上睫毛が0～4本追加</li>
+						<li>虹彩や瞳孔が煌びやかに</li>
+						<li>ハイライトの数が増加</li>
+					</ul>
+					といった点がさらに追加されていた。上睫毛の本数などに多少のばらつきはあるものの、基本的なデザインはすべてのSSRカードで統一されていた。ミリシタが運営開始した時点で、SSRカードのデザインが厳格に定められ、一貫したデザインが採用されているものと思われる。
+				</li>
+			</ul>
+			<p>SRカードのデザインがある時期を境にして変更されている理由については、SRカードのデザインをN・Rカードから差別化する要望が運営の途中で生じて、3周年(「CHALLENGE FOR GLOW-RY DAYS」)を期にSRのデザインをSSRに少し寄せたのではないかと想像する。</p>
+			<figure id="cards">
+				<img src="images/cards.jpg" width="">
+				<figcaption>春香のカードの目の一覧</figcaption>
+			</figure>
+
+		<h2>まとめ</h2>
+			<p>ミリシタの目のデザインを調査し、以下の知見を得た。</p>
+			<ul>
+				<li>虹彩の色はキャラカラーに関係なく選ばれており、睫毛の本数はアイドルの特徴に関係なく決められていた。目のデザインは、キャラカラーなどの外形的な要素を元にしているのではなく、個々のアイドルに最適なデザインが選択されていると考えられる。</li>
+				<li>ミリシタ参加組である紬と歌織に関しては、既存メンバーにない特徴(下睫毛や形状)を取り入れ、差別化を図ったと思われる。</li>
+				<li>カードランクによる違いについては、SSRカードは運営開始から一貫したデザインを踏襲していた。SRカードは、ミリシタ3周年ごろからSSRに寄せたデザインに変更されていた。</li>
+			</ul>
+		<h2>註</h2>
+
+			<p>本資料ではアイドルマスターミリオンライブシアターデイズの画像を多数用いています。それらの画像の著作権はBNEI社にあります。</p>
+
+    <script src="../article.js"></script>
+<script>
+const eye_table = `名前	上睫毛本数	下睫毛本数	虹彩色	キャラカラー
+天海春香	0	0	6FBF9B	#e22b30
+如月千早	1	0	AE7E6B	#2743d2
+星井美希	0	0	6CCD6F	#b4e04b
+萩原雪歩	0	0	E6B57B	#d3dde9
+高槻やよい	0	0	74CBCF	#f39939
+菊地真	0	0	C2A9C4	#515558
+水瀬伊織	0	0	E08988	#fd99e1
+四条貴音	1	0	E583C5	#a6126a
+秋月律子	1	0	B99075	#01a860
+三浦あずさ	0	0	C97388	#9238be
+双海亜美	2	0	BB8E93	#ffe43f
+双海真美	2	0	BB8E91	#ffe43e
+我那覇響	1	0	7BCDED	#01adb9
+春日未来	0	0	E8BE5C	#ea5b76
+最上静香	0	0	4C8DE7	#6495cf
+伊吹翼	1	0	C4387E	#fed552
+田中琴葉	0	0	A75344	#92cfbb
+島原エレナ	2	0	97CEF2	#9bce92
+佐竹美奈子	1	0	85BBE1	#58a6dc
+所恵美	2	0	A1A9FA	#454341
+徳川まつり	0	0	C77A40	#5abfb7
+箱崎星梨花	1	0	D1A05C	#ed90ba
+野々原茜	0	0	C27A65	#eb613f
+望月杏奈(ON)	0	0	61BFB7	#7e6ca8
+望月杏奈(OFF)	0	0	5BBCB7	#7e6ca8
+ロコ	0	0	D9DA7C	#fff03c
+七尾百合子	2	0	DAD97A	#c7b83c
+高山紗代子	0	0	BA665C	#7f6575
+松田亜利沙	0	0	DB7451	#b54461
+高坂海美	0	0	9DDBF8	#e9739b
+中谷育	0	0	A46048	#f7e78e
+天空橋朋花	0	0	A46464	#bee3e3
+エミリー	4	0	C0ACC9	#554171
+北沢志保	1	0	E8B07D	#afa690
+舞浜歩	0	0	B34FA1	#e25a9b
+木下ひなた	0	0	69BB9C	#d1342c
+矢吹可奈	0	0	DABE74	#f5ad3b
+横山奈緒	0	0	C398C6	#788bc5
+二階堂千鶴	1	0	76B17E	#f19557
+馬場このみ	1	0	63B2AA	#f1becb
+大神環	0	0	F6B33D	#ee762e
+豊川風花	1	0	B37843	#7278a8
+宮尾美也	0	0	AA7F88	#d7a96b
+福田のり子	0	0	C97B55	#eceb70
+真壁瑞希	0	0	DDCD8F	#99b7dc
+篠宮可憐	1	0	9DD8F3	#b63b40
+百瀬莉緒	2	0	CE7B83	#f19591
+永吉昴	0	0	994C61	#aeb49c
+北上麗花	0	0	E9B982	#6bb6b0
+周防桃子	2	0	4F86C4	#efb864
+ジュリア(ON)	1	0	587BDD	#d7385f
+ジュリア(OFF)	2	2	5A7BD8	#d7385f
+白石紬	1	2	A0E2F2	#ebe1ff
+桜守歌織	2	1	8DD280	#274079
+`;
+function make_table(data, div_id, table_id, caption){
+	let html = '';
+	html += `<table id="${table_id}">`;
+	html += `<caption>${caption}</caption>`;
+	const lines = data.split('\n');
+	let table_head = true;
+	for (let i = 0; i < lines.length; i++){
+		const line = lines[i]
+		const items = line.split('\t');
+		if (line.length < 1) continue;
+		if (i == 0) {
+			html += '<tr>';
+			for (let j = 0; j < 4; j++){
+				html += `
+					<th>
+						${items[j]}
+					</th>`;
+			}
+			html += '</tr>';
+
+		} else {
+			html += `
+				<tr>
+					<td style="color: ${items[4]}; text-shadow: 1px 1px 1px black;">${items[0]}</td>
+					<td align="center">${items[1]}</td>
+					<td align="center">${items[2]}</td>
+					<td style="background-color: #${items[3]}">#${items[3]}</td>
+				</tr>
+			`;
+		}
+	}
+	html += '</table>';
+	document.getElementById(div_id).innerHTML = html;
+}
+make_table(eye_table, 'eyes_div', 'eyes_table','目の特徴');
+</script>
+</body>
+</html>
