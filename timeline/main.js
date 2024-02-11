@@ -40,7 +40,7 @@ Colorful Days	2011-04-01	2013-02-01	comic	range	アイマス
 The world is all one!!	2011-04-01	2014-05-01	comic	range	アイマス
 まなマス	2012-10-01	2016-10-01	comic	range	アイマス
 朝焼けは黄金色	2017-05-27	2021-02-26	comic	range	アイマス
-デレマス	2011-11-28	継続中	game	range	シンデレラ
+デレマス	2011-11-28	2023-03-30	game	range	シンデレラ
 デレステ	2015-09-03	継続中	game	range	シンデレラ
 アニデレ	2015-01-01	2015-10-01	anime	range	シンデレラ
 しんげき	2017-04-04	2019-06-01	anime	range	シンデレラ
@@ -55,10 +55,11 @@ CINDERELLA PARTY!	2014-10-08	継続中	radio	range	シンデレラ
 WILD WIND GIRL	2016-05-01	2017-12-01	comic	range	シンデレラ
 U149	2016-11-28	継続中	comic	range	シンデレラ
 After20	2017-12-23	継続中	comic	range	シンデレラ
+アニメU149	2023-04-06	継続中	anime	range	シンデレラ
 ミリオンライブ	2013-02-27	2018-03-19	game	range	ミリオン
 ミリシタ	2017-06-29	継続中	game	range	ミリオン
 ミリラジ	2013-05-03	継続中	radio	range	ミリオン
-ミシシラ	2021-08-16	継続中	radio	range	ミリオン
+ミシシラ	2021-08-16	2023-01-26	radio	range	ミリオン
 みりおんコミックシアター	2014-03-26	2018-03-19	comic	range	ミリオン
 ゲッサン	2014-07-11	2016-09-12	comic	range	ミリオン
 バックステージ	2014-07-22	2016-09-22	comic	range	ミリオン
@@ -66,18 +67,21 @@ Road to stage	2016-10-22	2019-04-22	comic	range	ミリオン
 ミリシタ4コマ	2017-12-27	継続中	comic	range	ミリオン
 ライブリーフラワーズ	2020-02-18	継続中	comic	range	ミリオン
 Blooming Clover	2017-04-01	継続中	comic	range	ミリオン
-Brand New Song	2017-06-12	継続中	comic	range	ミリオン
-SideM	2014-02-28	継続中	game	range	SideM
+Brand New Song	2017-06-12	2022-10-18	comic	range	ミリオン
+アニメミリオンライブ	2023-08-18	継続中	anime	range	ミリオン
+天色のアステリズム	2022-02-12	2023-04-28	comic	range	ミリオン
+SideM	2014-02-28	2023-01-05	game	range	SideM
 LIVE ON ST@GE!	2017-08-30	2021-08-31	game	range	SideM
 アニM	2017-10-01	2017-12-01	anime	range	SideM
 315プロNight!	2015-04-03	継続中	radio	range	SideM
 ドラマチックステージ	2015-11-01	2017-09-01	comic	range	SideM
 理由あってMini!	2016-06-01	2018-03-01	comic	range	SideM
 ストラグルハート	2017-12-01	2020-04-01	comic	range	SideM
-GROWING STARS	2021-10-06	継続中	game	range	SideM
+GROWING STARS	2021-10-06	2023-07-31	game	range	SideM
 シャニマス	2018-04-24	継続中	game	range	シャニマス
 はばたきラジオステーション	2018-06-14	継続中	radio	range	シャニマス
 シャイニーカラーズ(Newtype)	2019-07-23	継続中	comic	range	シャニマス
+アニメシャニマス	2023-10-27	継続中	anime	range	シャニマス
 ポプマス	2021-01-21	2022-07-21	game	range	ポプマス
 
 `;
